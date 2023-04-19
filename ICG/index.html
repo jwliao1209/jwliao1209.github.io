@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+    <head>
+        <title>ICG HW1</title>
+        <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+        <script type="text/javascript" src="./js/glMatrix-0.9.5.min.js"></script>
+        <script type="text/javascript" src="./js/webgl-utils.js"></script>
+        <script type="text/javascript" src="./js/object.js"></script>
+        <script type="text/javascript" src="./js/render.js"></script>
+        <script type="text/javascript" src="./js/shader.js"></script>
+        <script type="text/javascript" src="./js/constant.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="./css/style.css">
+    </head>
+
+    <body onload="main();">
+        <div class="container">
+            <div class="screen">
+                <audio id="myAudio"></audio>
+                <!-- <p style="position: absolute; right: 2%; top:6%; "> -->
+                <canvas id="ICG-canvas" style="border: none;" width="1400" height="300" ></canvas>
+                <!-- </p> -->
+            </div>
+            <div class="option">
+                <p style="position: absolute; left: 1%; top: 1%; max-width: 30%; min-width: 30%; ">
+                    <button id="reset" onclick="reset()">Reset</button>
+                    <select id="shading_0" autocomplete="off" onchange="slideOption[0].updateShading()">
+                        <option value="0">Flat Shading</option>
+                        <option value="1">Gouraud Shading</option>
+                        <option value="2">Phong Shading</option>
+                    </select>
+                    <select id="shape" autocomplete="off" onchange="slideOption[0].updateShading()">
+                        <option value="0">Triangle</option>
+                        <option value="1">Lines</option>
+                    </select>
+                    <p>
+                        <label for="shading"></label>
+                    </p>
+                    </br>
+                    <details>
+                        <summary>Ambient Light</summary>
+                        <table>
+                            <tr>
+                                <th>R</th>
+                                <th>G</th>
+                                <th>B</th>
+                                <th>Ka</th>
+                            </tr>
+                            <tr>
+                                <td>0<input style="max-width: 70%; vertical-align: middle;" id="am_lR" type="range" autocomplete="off" value="1." max="1." min="0." step="0.05" oninput="ambientlight.updateColor()">1</td>
+                                <td>0<input style="max-width: 70%; vertical-align: middle;" id="am_lG" type="range" autocomplete="off" value="1." max="1." min="0." step="0.05" oninput="ambientlight.updateColor()">1</td>
+                                <td>0<input style="max-width: 70%; vertical-align: middle;" id="am_lB" type="range" autocomplete="off" value="1." max="1." min="0." step="0.05" oninput="ambientlight.updateColor()">1</td>
+                                <td>0<input style="max-width: 70%; vertical-align: middle;" id="am_ka" type="range" autocomplete="off" value="0.1" max="1." min="0." step="0.05" oninput="ambientlight.updateKa()">1</td>
+                            </tr>
+                        </table>
+                    </details>
+                    </br>
+                    <details>
+                        <summary>Light</summary>
+                        <table>
+                            <tr>
+                                <th>Light</th>
+                                <th>X</th>
+                                <th>Y</th>
+                                <th>Z</th>
+                                <th>R</th>
+                                <th>G</th>
+                                <th>B</th>
+                                <th>Kd</th>
+                                <th>Ks</th>
+                                <th>CD</th>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td><input style="max-width: 70%; vertical-align: middle;" id="0_llocX" type="range" autocomplete="off" value="0." max="20." min="-20." oninput="light.updatePosition(0)"></td>
+                                <td><input style="max-width: 70%; vertical-align: middle;" id="0_llocY" type="range" autocomplete="off" value="5." max="20." min="-20." oninput="light.updatePosition(0)"></td>
+                                <td><input style="max-width: 70%; vertical-align: middle;" id="0_llocZ" type="range" autocomplete="off" value="-10." max="0." min="-75." oninput="light.updatePosition(0)"></td>
+                                <td><input style="max-width: 70%; vertical-align: middle;" id="0_lR" type="range" autocomplete="off" value="1." max="1." min="0." step="0.05" oninput="light.updateColor(0)"></td>
+                                <td><input style="max-width: 70%; vertical-align: middle;" id="0_lG" type="range" autocomplete="off" value="1." max="1." min="0." step="0.05" oninput="light.updateColor(0)"></td>
+                                <td><input style="max-width: 70%; vertical-align: middle;" id="0_lB" type="range" autocomplete="off" value="1." max="1." min="0." step="0.05" oninput="light.updateColor(0)"></td>
+                                <td><input style="max-width: 65%; vertical-align: middle;" id="0_lKd" type="range" autocomplete="off" value="0.6" max="1." min="0." step="0.05" oninput="light.updateKdKsCD(0)"></td>
+                                <td><input style="max-width: 65%; vertical-align: middle;" id="0_lKs" type="range" autocomplete="off" value="0.3" max="1." min="0." step="0.05" oninput="light.updateKdKsCD(0)"></td>
+                                <td><input style="max-width: 65%; vertical-align: middle;" id="0_lCD" type="range" autocomplete="off" value="20." max="100." min="5." step="0.05" oninput="light.updateKdKsCD(0)"></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td><input style="max-width: 70%; vertical-align: middle;" id="1_llocX" type="range" autocomplete="off" value="0." max="20." min="-20." oninput="light.updatePosition(1)"></td>
+                                <td><input style="max-width: 70%; vertical-align: middle;" id="1_llocY" type="range" autocomplete="off" value="5." max="20." min="-20." oninput="light.updatePosition(1)"></td>
+                                <td><input style="max-width: 70%; vertical-align: middle;" id="1_llocZ" type="range" autocomplete="off" value="-10." max="0." min="-75." oninput="light.updatePosition(1)"></td>
+                                <td><input style="max-width: 70%; vertical-align: middle;" id="1_lR" type="range" autocomplete="off" value="1." max="1." min="0." step="0.05" oninput="light.updateColor(1)"></td>
+                                <td><input style="max-width: 70%; vertical-align: middle;" id="1_lG" type="range" autocomplete="off" value="1." max="1." min="0." step="0.05" oninput="light.updateColor(1)"></td>
+                                <td><input style="max-width: 70%; vertical-align: middle;" id="1_lB" type="range" autocomplete="off" value="1." max="1." min="0." step="0.05" oninput="light.updateColor(1)"></td>
+                                <td><input style="max-width: 65%; vertical-align: middle;" id="1_lKd" type="range" autocomplete="off" value="0.6" max="1." min="0." step="0.05" oninput="light.updateKdKsCD(1)"></td>
+                                <td><input style="max-width: 65%; vertical-align: middle;" id="1_lKs" type="range" autocomplete="off" value="0.3" max="1." min="0." step="0.05" oninput="light.updateKdKsCD(1)"></td>
+                                <td><input style="max-width: 65%; vertical-align: middle;" id="1_lCD" type="range" autocomplete="off" value="20." max="100." min="5." step="0.05" oninput="light.updateKdKsCD(1)"></td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td><input style="max-width: 70%; vertical-align: middle;" id="2_llocX" type="range" autocomplete="off" value="0." max="20." min="-20." oninput="light.updatePosition(2)"></td>
+                                <td><input style="max-width: 70%; vertical-align: middle;" id="2_llocY" type="range" autocomplete="off" value="5." max="20." min="-20." oninput="light.updatePosition(2)"></td>
+                                <td><input style="max-width: 70%; vertical-align: middle;" id="2_llocZ" type="range" autocomplete="off" value="-10." max="0." min="-75." oninput="light.updatePosition(2)"></td>
+                                <td><input style="max-width: 70%; vertical-align: middle;" id="2_lR" type="range" autocomplete="off" value="1." max="1." min="0." step="0.05" oninput="light.updateColor(2)"></td>
+                                <td><input style="max-width: 70%; vertical-align: middle;" id="2_lG" type="range" autocomplete="off" value="1." max="1." min="0." step="0.05" oninput="light.updateColor(2)"></td>
+                                <td><input style="max-width: 70%; vertical-align: middle;" id="2_lB" type="range" autocomplete="off" value="1." max="1." min="0." step="0.05" oninput="light.updateColor(2)"></td>
+                                <td><input style="max-width: 65%; vertical-align: middle;" id="2_lKd" type="range" autocomplete="off" value="0.6" max="1." min="0." step="0.05" oninput="light.updateKdKsCD(2)"></td>
+                                <td><input style="max-width: 65%; vertical-align: middle;" id="2_lKs" type="range" autocomplete="off" value="0.3" max="1." min="0." step="0.05" oninput="light.updateKdKsCD(2)"></td>
+                                <td><input style="max-width: 65%; vertical-align: middle;" id="2_lCD" type="range" autocomplete="off" value="20." max="100." min="5." step="0.05" oninput="light.updateKdKsCD(2)"></td>
+                            </tr>
+                        </table>
+                    </details>
+                    </br>
+                    <details>
+                        <summary>Object</summary>
+                        <table>
+                            <tr>
+                                <th></th>
+                                <th></th>
+                                <th>Kangaroo</th>
+                                <th></th>
+                                <th></th>
+                                <th>Teapot</th>
+                                <th></th>
+                                <th></th>
+                                <th>CSIE</th>
+                                <th></th>
+                            </tr>
+                            <tr>
+                                <th>      </th>
+                                <th>X axis</th>
+                                <th>Y axis</th>
+                                <th>Z axis</th>
+                                <th>X axis</th>
+                                <th>Y axis</th>
+                                <th>Z axis</th>
+                                <th>X axis</th>
+                                <th>Y axis</th>
+                                <th>Z axis</th>
+                            </tr>
+                            <tr>
+                                <td>Translation</td>
+                                <td><input id="translation_X_0" type="range" autocomplete="off" value="-20." max="50." min="-50." oninput="slideOption[0].updateTranslate()"></td>
+                                <td><input id="translation_Y_0" type="range" autocomplete="off" value="5." max="50." min="-50." oninput="slideOption[0].updateTranslate()"></td>
+                                <td><input id="translation_Z_0" type="range" autocomplete="off" value="-37" max="0." min="-120." oninput="slideOption[0].updateTranslate()"></td>
+                                <td><input id="translation_X_1" type="range" autocomplete="off" value="0." max="50." min="-50." oninput="slideOption[1].updateTranslate()"></td>
+                                <td><input id="translation_Y_1" type="range" autocomplete="off" value="0." max="50." min="-50." oninput="slideOption[1].updateTranslate()"></td>
+                                <td><input id="translation_Z_1" type="range" autocomplete="off" value="-15." max="0." min="-120." oninput="slideOption[1].updateTranslate()"></td>
+                                <td><input id="translation_X_2" type="range" autocomplete="off" value="5." max="50." min="-50." oninput="slideOption[2].updateTranslate()"></td>
+                                <td><input id="translation_Y_2" type="range" autocomplete="off" value="-1." max="50." min="-50." oninput="slideOption[2].updateTranslate()"></td>
+                                <td><input id="translation_Z_2" type="range" autocomplete="off" value="-12." max="0." min="-120." oninput="slideOption[2].updateTranslate()"></td>
+                            </tr>
+                            <tr>
+                                <td>Rotate</td>
+                                <td><input id="rotate_X_0" type="range" autocomplete="off" value="-90." max="180." min="-180." oninput="slideOption[0].updateRotate()"></td>
+                                <td><input id="rotate_Y_0" type="range" autocomplete="off" value="0." max="180." min="-180." oninput="slideOption[0].updateRotate()"></td>
+                                <td><input id="rotate_Z_0" type="range" autocomplete="off" value="60." max="180." min="-180." oninput="slideOption[0].updateRotate()"></td>
+                                <td><input id="rotate_X_1" type="range" autocomplete="off" value="0." max="180." min="-180." oninput="slideOption[1].updateRotate()"></td>
+                                <td><input id="rotate_Y_1" type="range" autocomplete="off" value="0." max="180." min="-180." oninput="slideOption[1].updateRotate()"></td>
+                                <td><input id="rotate_Z_1" type="range" autocomplete="off" value="0." max="180." min="-180." oninput="slideOption[1].updateRotate()"></td>
+                                <td><input id="rotate_X_2" type="range" autocomplete="off" value="-90." max="180." min="-180." oninput="slideOption[2].updateRotate()"></td>
+                                <td><input id="rotate_Y_2" type="range" autocomplete="off" value="0." max="180." min="-180." oninput="slideOption[2].updateRotate()"></td>
+                                <td><input id="rotate_Z_2" type="range" autocomplete="off" value="-45." max="180." min="-180." oninput="slideOption[2].updateRotate()"></td>
+                            </tr>
+                            <tr>
+                                <td>Sclae</td>
+                                <td><input id="scale_X_0" type="range" autocomplete="off" value="10" max="2." min="0.1." step="0.1" oninput="slideOption[0].updateScale()"></td>
+                                <td><input id="scale_Y_0" type="range" autocomplete="off" value="10" max="2." min="0.1." step="0.1" oninput="slideOption[0].updateScale()"></td>
+                                <td><input id="scale_Z_0" type="range" autocomplete="off" value="10" max="2." min="0.1." step="0.1" oninput="slideOption[0].updateScale()"></td>
+                                <td><input id="scale_X_1" type="range" autocomplete="off" value="0.2" max="2." min="0.1." step="0.1" oninput="slideOption[1].updateScale()"></td>
+                                <td><input id="scale_Y_1" type="range" autocomplete="off" value="0.2" max="2." min="0.1." step="0.1" oninput="slideOption[1].updateScale()"></td>
+                                <td><input id="scale_Z_1" type="range" autocomplete="off" value="0.2" max="2." min="0.1." step="0.1" oninput="slideOption[1].updateScale()"></td>
+                                <td><input id="scale_X_2" type="range" autocomplete="off" value="0" max="5." min="0.1." step="0.1" oninput="slideOption[2].updateScale()"></td>
+                                <td><input id="scale_Y_2" type="range" autocomplete="off" value="0" max="5." min="0.1." step="0.1" oninput="slideOption[2].updateScale()"></td>
+                                <td><input id="scale_Z_2" type="range" autocomplete="off" value="0" max="5." min="0.1." step="0.1" oninput="slideOption[2].updateScale()"></td>
+                            </tr>
+                            <tr>
+                                <td>Shear</td>
+                                <td><input id="shear_X_0" type="range" autocomplete="off" value="90." max="150." min="30." oninput="slideOption[0].updateShear()"></td>
+                                <td><input id="shear_Y_0" type="range" autocomplete="off" value="90." max="150." min="30." oninput="slideOption[0].updateShear()"></td>
+                                <td><input id="shear_Z_0" type="range" autocomplete="off" value="90." max="150." min="30." oninput="slideOption[0].updateShear()"></td>
+                                <td><input id="shear_X_1" type="range" autocomplete="off" value="90." max="150." min="30." oninput="slideOption[1].updateShear()"></td>
+                                <td><input id="shear_Y_1" type="range" autocomplete="off" value="90." max="150." min="30." oninput="slideOption[1].updateShear()"></td>
+                                <td><input id="shear_Z_1" type="range" autocomplete="off" value="90." max="150." min="30." oninput="slideOption[1].updateShear()"></td>
+                                <td><input id="shear_X_2" type="range" autocomplete="off" value="90." max="150." min="30." oninput="slideOption[2].updateShear()"></td>
+                                <td><input id="shear_Y_2" type="range" autocomplete="off" value="90." max="150." min="30." oninput="slideOption[2].updateShear()"></td>
+                                <td><input id="shear_Z_2" type="range" autocomplete="off" value="90." max="150." min="30." oninput="slideOption[2].updateShear()"></td>
+                            </tr>
+                            <tr>
+                                <td>Clip</td>
+                                <td><input id="clip_X_0" type="range" autocomplete="off" value="-50." max="50." min="-50." step="0.001" oninput="slideOption[0].updateClip()"></td>
+                                <td><input id="clip_Y_0" type="range" autocomplete="off" value="-50." max="50." min="-50." step="0.001" oninput="slideOption[0].updateClip()"></td>
+                                <td><input id="clip_Z_0" type="range" autocomplete="off" value="-50." max="50." min="-50." step="0.001" oninput="slideOption[0].updateClip()"></td>
+                                <td><input id="clip_X_1" type="range" autocomplete="off" value="-50." max="50." min="-50." step="0.001" oninput="slideOption[1].updateClip()"></td>
+                                <td><input id="clip_Y_1" type="range" autocomplete="off" value="-50." max="50." min="-50." step="0.001" oninput="slideOption[1].updateClip()"></td>
+                                <td><input id="clip_Z_1" type="range" autocomplete="off" value="-50." max="50." min="-50." step="0.001" oninput="slideOption[1].updateClip()"></td>
+                                <td><input id="clip_X_2" type="range" autocomplete="off" value="-50." max="50." min="-50." step="0.001" oninput="slideOption[2].updateClip()"></td>
+                                <td><input id="clip_Y_2" type="range" autocomplete="off" value="-50." max="50." min="-50." step="0.001" oninput="slideOption[2].updateClip()"></td>
+                                <td><input id="clip_Z_2" type="range" autocomplete="off" value="-50." max="50." min="-50." step="0.001" oninput="slideOption[2].updateClip()"></td>
+                            </tr>
+                        </table>
+                    </details>
+                </p>
+            </div>
+        </div>
+    </body>
+</html>
