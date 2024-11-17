@@ -1969,8 +1969,8 @@
 
 	.container {
 		margin: 0 auto;
-		max-width: calc(100% - 5em);
-		width: 60em;
+		max-width: calc(100% - 10em);
+		width: 55%;
 	}
 
 		.container.xsmall {
@@ -3934,4 +3934,29 @@
 		background-color: #f8f8f8;
 		border-color: #ccc;
 		color: #555;
+	}
+
+	.profile-picture {
+		border-radius: 50%;
+		margin-bottom: 10px;
+	}
+
+	#profile-container {
+		position: fixed;
+		top: 120px;
+		left: 50px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		z-index: 1000;
+		background-color: #fff;
+		border-radius: 10px;
+		padding: 10px;
+	}
+
+	.profile-picture {
+		width: 160px;
+		height: 160px;
+		border-radius: 50%;
+		margin-bottom: 10px;
 	}
