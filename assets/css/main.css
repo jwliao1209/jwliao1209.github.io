@@ -3960,11 +3960,14 @@
 
 	@media (max-width: 768px) {
 		#profile-container {
-			position: sticky;
+			position: relative;
 			width: 100%;
 			height: auto;
+			display: flex;
 			flex-direction: column;
-			background-color: #fff;
+			align-items: center;
+			justify-content: center;
+			margin: auto;
 		}
 	
 		.profile-picture {
