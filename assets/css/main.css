@@ -3965,7 +3965,7 @@
 		}
 	}
 
-	#profile-container {
+	.profile-container {
 		position: fixed;
 		display: flex;
 		flex-direction: column;
@@ -3998,8 +3998,9 @@
 		font-weight: 450;
 		margin-bottom: 3px;
 	}
+
 	@media (max-width: 768px) {
-		#profile-container {
+		.profile-container {
 			position: relative;
 			width: 100%;
 			height: auto;
@@ -4020,7 +4021,7 @@
 			font-size: 20px;
 		}
 		.profile-name.phd-candidate,
-		.profile-name.university {
+		.profile-name.university{
 			margin-bottom: 0px;
 			font-family: serif;
 			font-weight: 350;
@@ -4094,7 +4095,7 @@
 		font-weight: 600;
 	}
 
-	@media screen {
+	@media screen and (max-width: 768px){
 		.box h4 {
 			font-size: 16px;
 			font-weight: 600;
