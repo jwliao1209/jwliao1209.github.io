@@ -122,10 +122,11 @@
 		-webkit-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
 		-ms-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
 		transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
-		/* border-bottom: dotted 1px; */
+		border-bottom: dotted 1px;
 		/* color: #e89980; */
 		text-decoration: none;
-		font-size: 1.2rem;
+		font-size: 16px;
+		font-weight: 300;
 		color: #000000;
 		text-decoration: none;
 	}
@@ -3925,7 +3926,7 @@
 		justify-content: flex-start;
 		gap: 5px;
 		flex-wrap: nowrap;
-		padding-bottom: 20px;
+		padding: 20px 0 20px 0;
 		list-style: none;
 	}
 	.custom-button {
@@ -4043,4 +4044,15 @@
 		.youtube-video {
 			width: 100%
 		}
+	}
+
+	.box p {
+		margin-bottom: 10px;
+		line-height: 1.5;
+		font-size: 16px;
+		font-weight: 300;
+	}
+
+	.box h4 {
+		font-weight: 600;
 	}
