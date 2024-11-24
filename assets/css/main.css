@@ -3953,6 +3953,9 @@
 			display: flex;
 			justify-content: flex-start;
 			gap: 5px;
+			flex-wrap: nowrap;
+			padding-bottom: 20px;
+			list-style: none;
 		}
 	}
 
