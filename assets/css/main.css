@@ -4115,3 +4115,53 @@
 			border-bottom: dotted 1px;
 		}
 	}
+
+	#filter-container {
+		padding: 10px;
+		border: 1px solid #ddd;
+		/* border-radius: 5px; */
+		margin-bottom: 20px;
+		margin: 1em;
+	}
+	#filter-container h3 {
+		margin: 0;
+		margin-bottom: 10px;
+		font-size: 16px;
+	}
+	.filter-tags {
+		display: inline-block;
+		padding: 0px 5px;
+		margin: 5px;
+		border: 1px solid #ccc;
+		border-radius: 8px;
+		background-color: #f8f8f8;
+		font-size: 12px;
+		cursor: pointer;
+		transition: all 0.3s;
+	}
+	.filter-tags.selected {
+		background-color: #74d2e7;
+		color: #fff;
+		border-color: #74d2e7;
+	}
+	.filter-tags:hover {
+		background-color: #74d2e7;
+		color: #fff;
+		border-color: #74d2e7;
+	}
+	.tags-container {
+		margin-top: 10px;
+		font-size: 14px;
+		color: #555;
+	}
+	.tags {
+		display: inline-block;
+		padding: 0px 5px;
+		margin-right: 5px;
+		background-color: #74d2e7;
+		color: #fff;
+		border-radius: 5px;
+		font-size: 12px;
+		cursor: pointer;
+		transition: background-color 0.2s;
+	}

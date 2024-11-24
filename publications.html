@@ -31,11 +31,17 @@
 					<header>
 						<h2>Publications</h2>
 					</header>
+
 					<div class="row">
 						<div class="col-12">
+							<div id="filter-container">
+								<h3>Filters</h3>
+								<div id="filter-tags">
+								</div>
+							</div>
 
 							<!-- ADL final -->
-                            <section class="box">
+                            <section class="box" data-tags="#Aesthetic QR Code, #Diffusion Models">
                                 <h4>DiffQRCoder: Diffusion-based Aesthetic QR Code Generation with Scanning Robustness Guided Iterative Refinement</h4>
                                 <p>
 									<b>Jia-Wei Liao</b>,
@@ -47,6 +53,7 @@
 									Jun-Cheng Chen
 								</p>
 								<p><i>IEEE/CVF Winter Conference on Applications of Computer Vision (WACV) 2025.</i></p>
+								<div class="tags-container"></div>
 								<div class="button-container">
 									<li><a href="https://arxiv.org/abs/2409.06355" class="custom-button" target="_blank">Paper</a></li>
 									<li><a href="https://jwliao1209.github.io/DiffQRCoder/" class="custom-button" target="_blank">Project Page</a></li>
@@ -54,7 +61,7 @@
 								</p>
                             </section>
 
-							<section class="box">
+							<section class="box" data-tags="#Adversarial Attack, #Diffusion Models">
                                 <h4>Pixel Is Not A Barrier: An Effective Evasion Attack for Pixel-Domain Diffusion Models</h4>
                                 <p>
 									Chun-Yen Shih*,
@@ -65,12 +72,13 @@
 									Jun-Cheng Chen
 								</p>
 								<p><i>Submitted to AAAI 2025.</i></p>
+								<div class="tags-container"></div>
 								<div class="button-container">
 									<li><a href="https://arxiv.org/abs/2408.11810" class="custom-button" target="_blank">Paper</a></li>
 								</div>
                             </section>
 
-							<section class="box">
+							<section class="box" data-tags="#Active Learning, #3D Object Detection">
                                 <h4>Distribution Discrepancy and Feature Heterogeneity for Active 3D Object Detection</h4>
                                 <p>
 									Huang-Yu Chen,
@@ -80,13 +88,14 @@
 									<a href="https://winstonhsu.info/">Winston H Hsu</a>
 								</p>
 								<p><i>Conference on Robot Learning (CoRL), 2024.</i></p>
+								<div class="tags-container"></div>
 								<div class="button-container">
 									<li><a href="https://arxiv.org/abs/2409.05425" class="custom-button" target="_blank">Paper</a></li>
 									<li><a href="https://github.com/Coolshanlan/DDFH-active-3Ddet" class="custom-button" target="_blank">Code</a></li>
 								</div>
                             </section>
 
-							<section class="box">
+							<section class="box" data-tags="#Image Segmentation, #Medical Image Analysis, #Optimal Mass Transportation">
                                 <h4>An UNet-Based Brain Tumor Segmentation Framework via Optimal Mass Transportation Pre-processing</h4>
                                 <p>
 									<b>Jia-Wei Liao</b>,
@@ -97,6 +106,7 @@
 									<a href="https://daweb.qzc.tsinghua.edu.cn/ShingTungYau/en/zdylm/5539/list/index.htm">Shing-Tung Yau</a>
 								</p>
 								<p><i>International Conference on Medical Image Computing and Computer-Assisted Intervention (MICCAI) Brainlesion Workshop, 2022.</i></p>
+								<div class="tags-container"></div>
 								<div class="button-container">
 									<li><a href="https://link.springer.com/chapter/10.1007/978-3-031-33842-7_19" class="custom-button" target="_blank">Paper</a></li>
 								</div>
@@ -124,5 +134,61 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 
+			<script>
+				document.querySelectorAll(".box").forEach(box => {
+					const tagsContainer = box.querySelector(".tags-container");
+					const tags = box.getAttribute("data-tags").split(", ");
+					tags.forEach(tag => {
+						const span = document.createElement("span");
+						span.className = "tags";
+						span.textContent = tag;
+						tagsContainer.appendChild(span);
+					});
+				});
+
+				const uniqueTags = new Set();
+				document.querySelectorAll(".box").forEach(box => {
+					const tags = box.getAttribute("data-tags").split(", ");
+					tags.forEach(tag => uniqueTags.add(tag));
+				});
+		
+				const filterTagsContainer = document.getElementById("filter-tags");
+				uniqueTags.forEach(tag => {
+					const tagButton = document.createElement("span");
+					tagButton.className = "filter-tags";
+					tagButton.textContent = tag;
+					tagButton.setAttribute("data-tag", tag);
+					filterTagsContainer.appendChild(tagButton);
+				});
+
+				const selectedTags = new Set();
+				document.addEventListener("click", function (e) {
+					if (e.target.classList.contains("filter-tags")) {
+						const tag = e.target.getAttribute("data-tag");
+
+						if (selectedTags.has(tag)) {
+							selectedTags.delete(tag);
+							e.target.classList.remove("selected");
+						} else {
+							selectedTags.add(tag);
+							e.target.classList.add("selected");
+						}
+						filterPublications();
+					}
+				});
+
+				function filterPublications() {
+					const publications = document.querySelectorAll(".box");
+					publications.forEach(publication => {
+						const tags = publication.getAttribute("data-tags").split(", ");
+						if (selectedTags.size === 0) {
+							publication.style.display = "block";
+						} else {
+							const match = Array.from(selectedTags).some(tag => tags.includes(tag));
+							publication.style.display = match ? "block" : "none";
+						}
+					});
+				}
+			</script>
 	</body>
 </html>
