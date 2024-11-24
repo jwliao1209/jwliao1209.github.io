@@ -4056,3 +4056,23 @@
 	.box h4 {
 		font-weight: 600;
 	}
+
+	@media screen {
+		.box h4 {
+			font-size: 16px;
+			font-weight: 600;
+		}
+		.box p {
+			margin-bottom: 10px;
+			line-height: 1.5;
+			font-size: 14px;
+			font-weight: 300;
+		}
+		.box a {
+			font-size: 14px;
+			font-weight: 300;
+			color: #000000;
+			text-decoration: none;
+			border-bottom: dotted 1px;
+		}
+	}
