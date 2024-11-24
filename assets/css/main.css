@@ -2546,6 +2546,11 @@
 						font-size: 1.75em;
 					}
 
+			.icons li a {
+				font-size: 20px; /* 根據需求調整大小，例如 24px */
+				line-height: 1;
+			}
+
 	dl {
 		margin: 0 0 2em 0;
 	}
@@ -3970,7 +3975,6 @@
     	height: 100vh;
 		margin-left: 20px;
 	}
-
 	.profile-picture {
 		width: 160px;
 		height: 160px;
@@ -3978,7 +3982,22 @@
 		margin-bottom: 10px;
 		margin-top: 50px;
 	}
-
+	.profile-name {
+		font-family: serif;
+		font-weight: 1000;
+		padding: 2px 0 2px;
+	}
+	.profile-name.phd-candidate,
+	.profile-name.university {
+		margin-bottom: 0px;
+		font-family: serif;
+		font-weight: 350;
+	}
+	.profile-name.email {
+		font-family: 'Ubuntu Mono', monospace;
+		font-weight: 450;
+		margin-bottom: 3px;
+	}
 	@media (max-width: 768px) {
 		#profile-container {
 			position: relative;
@@ -3990,10 +4009,28 @@
 			justify-content: center;
 			margin: auto;
 		}
-	
 		.profile-picture {
 			width: 120px;
 			height: 120px;
+		}
+		.profile-name {
+			font-family: serif;
+			font-weight: 1000;
+			padding: 2px 0 2px;
+			font-size: 20px;
+		}
+		.profile-name.phd-candidate,
+		.profile-name.university {
+			margin-bottom: 0px;
+			font-family: serif;
+			font-weight: 350;
+			font-size: 16px;
+		}
+		.profile-name.email {
+			font-family: 'Ubuntu Mono', monospace;
+			font-weight: 450;
+			margin-bottom: 3px;
+			font-size: 16px;
 		}
 	}
 
