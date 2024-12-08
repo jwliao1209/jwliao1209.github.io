@@ -1976,8 +1976,10 @@
 		margin: 0 auto;
 		max-width: calc(100% - 10em);
 		width: 55%;
-		margin: 0 auto 0 30%;
 	}
+		.container.home {
+			margin: 0 auto 0 30%;
+		}
 
 		.container.xsmall {
 			width: 15em;
@@ -2009,12 +2011,22 @@
 				width: 100% !important;
 			}
 
+			.container.home {
+				margin: 0 auto 0 auto;
+				max-width: calc(100% - 5em);
+			}
+
 		}
 
 		@media screen and (max-width: 736px) {
 
 			.container {
 				max-width: 100%;
+			}
+
+			.container.home {
+				margin: 0 auto 0 auto;
+				max-width: calc(100% - 5em);
 			}
 
 		}
