@@ -2276,6 +2276,7 @@
 		padding: 3em;
 		border: 1.5px solid #e5e5ea;
 		padding: 25px;
+		box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
 	}
 
 		.box > :last-child {
@@ -3953,7 +3954,7 @@
 		font-size: 14px;
 		font-weight: 400;
 		color: #333;
-		border: 1.5px solid #ddd;
+		border: 1.4px solid #939393;
 		border-radius: 8px;
 		background-color: transparent;
 		text-align: center;
@@ -4181,9 +4182,10 @@
 		display: inline-block;
 		padding: 0px 5px;
 		margin-right: 5px;
-		background-color: #74d2e7;
-		color: #fff;
-		border-radius: 5px;
+		background-color: #fff2e8;
+		color: #d4380d;
+		border-radius: 8px;
+		border: 1.2px solid #ffbb96;
 		font-size: 12px;
 		cursor: pointer;
 		transition: background-color 0.2s;
