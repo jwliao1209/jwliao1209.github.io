@@ -2276,7 +2276,11 @@
 		padding: 3em;
 		border: 1.5px solid #e5e5ea;
 		padding: 25px;
-		box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+	}
+	.box:hover{
+		box-shadow: -3px 3px 5px rgba(0, 0, 0, 0.1);
+		transition: box-shadow 0.3s ease;
 	}
 
 		.box > :last-child {
@@ -3986,7 +3990,7 @@
 		align-items: center;
 		z-index: 1000;
 		width: 18%;
-    	height: 100vh;
+		height: 100vh;
 		margin-left: 8%;
 	}
 	.profile-picture {
@@ -3997,14 +4001,14 @@
 		margin-top: 50px;
 	}
 	.profile-name {
-		font-family: serif;
-		font-weight: 1000;
+		font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;;
+		font-weight: 500;
 		padding: 2px 0 2px;
 	}
 	.profile-name.phd-candidate,
 	.profile-name.university {
 		margin-bottom: 0px;
-		font-family: serif;
+		font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;;
 		font-weight: 350;
 	}
 	.profile-name.email {
