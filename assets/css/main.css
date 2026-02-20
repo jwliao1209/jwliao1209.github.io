@@ -4057,6 +4057,12 @@
 		margin: 10px 0 50px 0;
 	}
 
+	#main.container.home h2 {
+		padding-bottom: 0.3rem;
+		margin-bottom: 1rem;
+		border-bottom: 1.2px solid #e5e7eb;
+	}
+
 	.education-item {
 		display: flex;
 		align-items: center;
@@ -4074,6 +4080,65 @@
 
 	.education-info p {
 		margin: 0;
+		line-height: 1.45;
+		color: #2f2f2f;
+	}
+
+	.education-info p + p {
+		margin-top: 2px;
+	}
+
+	.education-school {
+		font-weight: 500;
+	}
+
+	.education-department {
+		font-weight: 200;
+	}
+
+	.education-date {
+		font-weight: 200;
+		color: #6b7280;
+	}
+
+	.honor-list {
+		list-style: none;
+		margin: 0 0 2.5rem 0;
+		padding: 0;
+	}
+
+	.honor-item {
+		display: grid;
+		grid-template-columns: 1fr auto;
+		column-gap: 1.5rem;
+		align-items: baseline;
+		padding: 0.75rem 0 0.75rem 1.1rem;
+		position: relative;
+	}
+
+	.honor-item::before {
+		content: "";
+		width: 0.36rem;
+		height: 0.36rem;
+		border-radius: 50%;
+		background: #2f2f2f;
+		position: absolute;
+		left: 0;
+		top: 1.42rem;
+	}
+
+	.honor-title {
+		font-size: 1.05rem;
+		font-weight: 500;
+		line-height: 1.45;
+		color: #2f2f2f;
+	}
+
+	.honor-date {
+		font-size: 1rem;
+		font-weight: 200;
+		color: #2f2f2f;
+		white-space: nowrap;
 	}
 
 	@media (max-width: 768px) {
@@ -4090,6 +4155,25 @@
 		.education-item img {
 			width: 50px;
 			border-radius: 5px;
+		}
+
+		.honor-item {
+			grid-template-columns: 1fr;
+			row-gap: 0.25rem;
+			padding: 0.75rem 0 0.75rem 0.95rem;
+		}
+
+		.honor-item::before {
+			top: 1.3rem;
+		}
+
+		.honor-title {
+			font-size: 1rem;
+		}
+
+		.honor-date {
+			font-size: 0.92rem;
+			color: #6b7280;
 		}
 	}
 	.youtube-video {
@@ -4135,47 +4219,92 @@
 	}
 
 	#filter-container {
-		padding: 10px;
-		border: 1px solid #ddd;
-		/* border-radius: 5px; */
-		margin-bottom: 20px;
+		position: relative;
+		padding: 1.5rem 1.5rem 1.1rem;
+		border: 1px solid #d0d3d8;
+		border-radius: 0.75rem;
+		margin-bottom: 1.25rem;
+		background: #fff;
 	}
 
 	@media screen and (max-width: 768px){
 		#filter-container {
-			padding: 10px;
-			border: 1px solid #ddd;
-			/* border-radius: 5px; */
-			margin-bottom: 20px;
-			margin: 1em;
+			padding: 1.4rem 1rem 1rem;
+			margin-bottom: 1.25rem;
 		}
 	}
 
 	#filter-container h3 {
+		position: absolute;
+		top: -0.6rem;
+		left: 1rem;
 		margin: 0;
-		margin-bottom: 10px;
-		font-size: 16px;
+		padding: 0 0.6rem;
+		font-size: 1.05rem;
+		font-weight: 500;
+		line-height: 1;
+		color: #2f2f2f;
+		background: #fff;
 	}
+
+	.filter-row {
+		display: flex;
+		align-items: flex-start;
+		gap: 0.8rem;
+		flex-wrap: wrap;
+	}
+
+	.filter-label {
+		font-size: 0.8rem;
+		font-weight: 500;
+		line-height: 1.3;
+		color: #2f2f2f;
+		white-space: nowrap;
+	}
+
+	#filter-tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.65rem;
+		flex: 1;
+	}
+
 	.filter-tags {
-		display: inline-block;
-		padding: 0px 5px;
-		margin: 5px;
-		border: 1px solid #ccc;
-		border-radius: 8px;
-		background-color: #f8f8f8;
-		font-size: 12px;
+		display: inline-flex;
+		align-items: center;
+		padding: 0.24rem 0.85rem;
+		margin: 0;
+		border: 1px solid #c4c7cd;
+		border-radius: 0.62rem;
+		background-color: #f4f5f7;
+		font-size: 0.8rem;
+		font-weight: 400;
+		line-height: 1.2;
+		color: #676c74;
 		cursor: pointer;
-		transition: all 0.3s;
+		transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
 	}
+
 	.filter-tags.selected {
-		background-color: #74d2e7;
-		color: #fff;
-		border-color: #74d2e7;
+		background-color: #e6ebf2;
+		color: #2d323a;
+		border-color: #b8bec8;
 	}
+
 	.filter-tags:hover {
-		background-color: #74d2e7;
-		color: #fff;
-		border-color: #74d2e7;
+		background-color: #e9edf3;
+		color: #2d323a;
+		border-color: #b8bec8;
+	}
+
+	@media screen and (max-width: 768px){
+		.filter-label {
+			font-size: 1.05rem;
+		}
+
+		.filter-tags {
+			font-size: 0.82rem;
+		}
 	}
 	.tags-container {
 		margin-top: 10px;

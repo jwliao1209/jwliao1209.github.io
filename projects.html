@@ -12,7 +12,7 @@
 
 			<!-- Header -->
             <header id="header">
-                <h1><a href="index.html">Jiawei's</a> Website</h1>
+                <h1><a href="index.html">Jiawei</a></h1>
                 <nav id="nav">
                     <ul>
                         <li><a href="index.html">Home</a></li>
@@ -36,7 +36,9 @@
                     <div class="col-12">
                         <div id="filter-container">
                             <h3>Filters</h3>
-                            <div id="filter-tags">
+                            <div class="filter-row">
+                                <span class="filter-label">Tags:</span>
+                                <div id="filter-tags"></div>
                             </div>
                         </div>
 
@@ -49,7 +51,6 @@
                                 <li><a href="projects/苦Gym甘來_poster.pdf" class="custom-button" target="_blank">Poster</a></li>
                                 <li><a href="projects/苦Gym甘來_paper.pdf" class="custom-button" target="_blank">Extended Abstract</a></li>
                             </div>
-                            </p>
                         </section>
 
                         <section class="box" data-tags="#Diffusion Model, #Music Generation">
@@ -60,7 +61,6 @@
                                 <li><a href="projects/diffmusic.pdf" class="custom-button" target="_blank">Slides</a></li>
                                 <li><a href="https://github.com/jwliao1209/DiffMusic" class="custom-button" target="_blank">Code</a></li>
                             </div>
-                            </p>
                         </section>
 
                         <section class="box" data-tags="#NLP, #LLM">
@@ -72,7 +72,6 @@
                                 <li><a href="projects/twllm_tutor_slides.pdf" class="custom-button" target="_blank">Slides</a></li>
                                 <li><a href="https://github.com/jwliao1209/TWLLM-Tutor" class="custom-button" target="_blank">Code</a></li>
                             </div>
-                            </p>
                         </section>
 
                         <section class="box" data-tags="#Machine Learning, #Feature Engineering, #Multimodal AI">
@@ -82,7 +81,7 @@
                             <div class="button-container">
                                 <li><a href="projects/multimodal_pathological_voice_classification_report.pdf" class="custom-button" target="_blank">Report</a></li>
                                 <li><a href="https://github.com/jwliao1209/Multimodal-Pathological-Voice-Classification" class="custom-button" target="_blank">Code</a></li>
-                            </ul>
+                            </div>
                         </section>
 
                         <section class="box" data-tags="#Data Analysis, #Business Analysis">
@@ -296,7 +295,7 @@
         <!-- Footer -->
             <footer id="footer">
                 <ul class="copyright">
-                    <li>&copy; 2025 Jiawei. All rights reserved.</li>
+                    <li>&copy; 2026 Jiawei. All rights reserved.</li>
                 </ul>
             </footer>
 
@@ -333,7 +332,7 @@
 				uniqueTags.forEach(tag => {
 					const tagButton = document.createElement("span");
 					tagButton.className = "filter-tags";
-					tagButton.textContent = tag;
+					tagButton.textContent = tag.replace(/^#/, "");
 					tagButton.setAttribute("data-tag", tag);
 					filterTagsContainer.appendChild(tagButton);
 				});
