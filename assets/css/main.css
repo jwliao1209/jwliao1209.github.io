@@ -3880,7 +3880,7 @@
 			.box {
 				border: 1.5px solid #e5e5ea;
 				box-shadow: none;
-				margin: 1em 0 0 0;
+				margin: 1em;
 				padding: 3em 1em !important;
 			}
 
@@ -4148,7 +4148,7 @@
 
 		.container {
 			word-break: normal;
-			margin-left: 30px;
+			margin: 0 auto;
 			max-width: calc(100% - 40px);
 		}
 
@@ -4202,7 +4202,6 @@
 		font-size: 1.1rem;
 		line-height: 1.35;
 		font-weight: 600;
-		color: #1f2937;
 	}
 
 	.publications-page .publication-authors {
@@ -4210,7 +4209,6 @@
 		font-size: 0.9rem;
 		line-height: 1.55;
 		font-weight: 350;
-		color: #374151;
 	}
 
 	.publications-page .publication-authors a {
@@ -4225,7 +4223,6 @@
 		font-size: 0.9rem;
 		line-height: 1.5;
 		font-weight: 500;
-		color: #6b7280;
 	}
 
 	.publications-page .publication-main .publication-venue {
@@ -4314,6 +4311,17 @@
 		width: 100%;
 	}
 
+	@media screen and (max-width: 800px) {
+		.publication-split {
+			grid-template-columns: 1fr;
+			gap: 0.8rem;
+		}
+
+		.publication-media .youtube-video {
+			margin-top: 0;
+		}
+	}
+
 	@media screen and (max-width: 768px){
 		.box h4 {
 			font-size: 16px;
@@ -4348,14 +4356,6 @@
 			font-size: 0.86rem;
 		}
 
-		.publication-split {
-			grid-template-columns: 1fr;
-			gap: 0.8rem;
-		}
-
-		.publication-media .youtube-video {
-			margin-top: 0;
-		}
 	}
 
 	#filter-container {
