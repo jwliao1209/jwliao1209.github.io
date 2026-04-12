@@ -1,5 +1,5 @@
 @import url("fontawesome-all.min.css");
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,300italic,400italic");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,300;1,400&family=Roboto+Slab:wght@100;300;400;500;700&display=swap");
 
 /*
 	Alpha by HTML5 UP
@@ -105,16 +105,15 @@
 	}
 
 	body {
-		background: #ffffff;
+		background: #fdfdfd;
 	}
 
 	body, input, select, textarea {
-		color: #24292f;
-		font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+		color: #000;
+		font-family: "Roboto", -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
 		font-size: 16pt;
 		font-weight: 300;
-		line-height: 1.5em;
-		/* letter-spacing: -0.015em; */
+		line-height: 1.65em;
 	}
 
 	a {
@@ -136,9 +135,9 @@
 		}
 
 	strong, b {
-		font-family: Apple-System, Arial, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, STXihei, sans-serif;
-		color: #24292f;
-		font-weight: 550;
+		font-family: "Roboto", -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
+		color: #000;
+		font-weight: 500;
 	}
 
 	em, i {
@@ -150,10 +149,11 @@
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-		color: #2f2f2f;
+		color: #000;
 		font-weight: 300;
 		line-height: 1em;
 		margin: 0 0 0.5em 0;
+		font-family: "Roboto", -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
 	}
 
 		h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
@@ -162,17 +162,17 @@
 		}
 
 	h2 {
-		font-family: Apple-System, Arial, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, STXihei, sans-serif;
+		font-family: "Roboto", -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
 		font-size: 1.5em;
 		line-height: 1.5em;
 		font-weight: 600;
 	}
 
 	h3 {
-		font-family: Apple-System, Arial, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, STXihei, sans-serif;
+		font-family: "Roboto", -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
 		font-size: 1.3em;
 		line-height: 1.5em;
-		font-weight: 550;
+		font-weight: 500;
 	}
 
 	h4 {
@@ -2962,7 +2962,7 @@
 	}
 
 	#header {
-		background: #444;
+		background: #1c1c1e;
 		color: #bbb;
 		cursor: default;
 		height: 3.25em;
@@ -2972,6 +2972,7 @@
 		top: 0;
 		width: 100%;
 		z-index: 10000;
+		box-shadow: 0 1px 0 rgba(255,255,255,0.05), 0 2px 16px rgba(0,0,0,0.3);
 	}
 
 		#header h1 {
@@ -3024,10 +3025,16 @@
 					}
 
 					#header nav > ul > li a:not(.button) {
-						color: #fff;
+						color: rgba(255,255,255,0.85);
 						display: inline-block;
 						text-decoration: none;
 						border: 0;
+						transition: color 0.2s ease, background-color 0.2s ease;
+					}
+
+					#header nav > ul > li a:not(.button):hover {
+						color: #fff;
+						background-color: rgba(255,255,255,0.1);
 					}
 
 						#header nav > ul > li a:not(.button).icon:before {
@@ -3052,23 +3059,24 @@
 		#header input[type="reset"],
 		#header input[type="button"],
 		#header .button {
-			background-color: transparent;
-			box-shadow: inset 0 0 0 2px #999;
+			background-color: rgba(255, 255, 255, 0.15);
+			box-shadow: none;
 			color: #fff;
+			border-radius: 6px;
 		}
 
 			#header input[type="submit"]:hover,
 			#header input[type="reset"]:hover,
 			#header input[type="button"]:hover,
 			#header .button:hover {
-				background-color: rgba(153, 153, 153, 0.25);
+				background-color: rgba(255, 255, 255, 0.25);
 			}
 
 			#header input[type="submit"]:active,
 			#header input[type="reset"]:active,
 			#header input[type="button"]:active,
 			#header .button:active {
-				background-color: rgba(153, 153, 153, 0.5);
+				background-color: rgba(255, 255, 255, 0.3);
 			}
 
 		#header .container {
@@ -3287,8 +3295,9 @@
 /* Footer */
 
 	#footer {
-		background: #ffffff;
-		padding: 4em 0 6em 0;
+		background: #fafafa;
+		border-top: 1px solid #ebebeb;
+		padding: 3em 0 4em 0;
 		text-align: center;
 	}
 
@@ -4058,30 +4067,56 @@
 	}
 
 	#main.container.home h2 {
-		padding-bottom: 0.3rem;
-		margin-bottom: 1rem;
-		border-bottom: 1.2px solid #e5e7eb;
+		padding-bottom: 0.4rem;
+		margin-bottom: 1.2rem;
+		border-bottom: 2px solid #f0f0f0;
+		color: #000;
+		position: relative;
+	}
+
+	#main.container.home h2::after {
+		content: "";
+		position: absolute;
+		bottom: -2px;
+		left: 0;
+		width: 2.5rem;
+		height: 2px;
+		background: #e89980;
+		border-radius: 2px;
 	}
 
 	.education-item {
 		display: flex;
 		align-items: center;
 		margin-bottom: 20px;
+		padding: 12px 16px;
+		border-radius: 10px;
+		transition: background-color 0.2s ease, box-shadow 0.2s ease;
+		position: relative;
+	}
+
+.education-item:hover {
+		background-color: #fafafa;
+		box-shadow: 0 2px 12px rgba(0,0,0,0.06);
 	}
 
 	.education-item img {
 		width: 60px;
-		border-radius: 5px;
+		height: 60px;
+		object-fit: contain;
+		flex-shrink: 0;
+		position: relative;
+		z-index: 1;
 	}
 
 	.education-info {
-		margin-left: 30px;
+		margin-left: 22px;
 	}
 
 	.education-info p {
 		margin: 0;
 		line-height: 1.45;
-		color: #2f2f2f;
+		color: #000;
 	}
 
 	.education-info p + p {
@@ -4093,12 +4128,14 @@
 	}
 
 	.education-department {
-		font-weight: 200;
+		font-weight: 350;
+		color: #333;
 	}
 
-	.education-date {
-		font-weight: 200;
+	.education-info .education-date {
+		font-weight: 300;
 		color: #6b7280;
+		font-size: 0.9rem;
 	}
 
 	.honor-list {
@@ -4112,8 +4149,14 @@
 		grid-template-columns: 1fr auto;
 		column-gap: 1.5rem;
 		align-items: baseline;
-		padding: 0.75rem 0 0.75rem 1.1rem;
+		padding: 0.75rem 0.75rem 0.75rem 1.1rem;
 		position: relative;
+		border-radius: 8px;
+		transition: background-color 0.18s ease;
+	}
+
+	.honor-item:hover {
+		background-color: #fafafa;
 	}
 
 	.honor-item::before {
@@ -4121,23 +4164,23 @@
 		width: 0.36rem;
 		height: 0.36rem;
 		border-radius: 50%;
-		background: #2f2f2f;
+		background: #e89980;
 		position: absolute;
 		left: 0;
 		top: 1.42rem;
 	}
 
 	.honor-title {
-		font-size: 1.05rem;
-		font-weight: 500;
-		line-height: 1.45;
-		color: #2f2f2f;
+		font-size: 1.0rem;
+		font-weight: 300;
+		line-height: 1.5;
+		color: #000;
 	}
 
 	.honor-date {
-		font-size: 1rem;
-		font-weight: 200;
-		color: #2f2f2f;
+		font-size: 0.9rem;
+		font-weight: 300;
+		color: #6b7280;
 		white-space: nowrap;
 	}
 
@@ -4209,12 +4252,25 @@
 		font-size: 0.9rem;
 		line-height: 1.55;
 		font-weight: 350;
+		color: #828282;
 	}
 
 	.publications-page .publication-authors a {
 		font-size: inherit;
-		font-weight: inherit;
-		color: inherit;
+		font-weight: 500;
+		color: #828282;
+		border-bottom: none;
+		text-decoration: none;
+	}
+
+	.publications-page .publication-authors a:hover {
+		color: #555;
+		border-bottom: none;
+	}
+
+	.publications-page .publication-authors b {
+		font-weight: 500;
+		color: #000;
 	}
 
 	.publications-page .publication-venue {
@@ -4383,7 +4439,7 @@
 		font-size: 1.05rem;
 		font-weight: 500;
 		line-height: 1;
-		color: #2f2f2f;
+		color: #000;
 		background: #fff;
 	}
 
@@ -4398,7 +4454,7 @@
 		font-size: 0.8rem;
 		font-weight: 500;
 		line-height: 1.3;
-		color: #2f2f2f;
+		color: #000;
 		white-space: nowrap;
 	}
 
@@ -4426,9 +4482,9 @@
 	}
 
 	.filter-tags.selected {
-		background-color: #e6ebf2;
-		color: #2d323a;
-		border-color: #b8bec8;
+		background-color: #3a3a3a;
+		color: #fff;
+		border-color: #3a3a3a;
 	}
 
 	.filter-tags:hover {
