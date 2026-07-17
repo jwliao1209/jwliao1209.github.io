@@ -1,23 +1,25 @@
 <!DOCTYPE HTML>
 
-<html>
+<html lang="en">
 	<head>
-		<title>Projects</title>
+		<title>Projects | Jia-Wei Liao</title>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<script>try{if(localStorage.getItem("site-theme")==="dark"){document.documentElement.setAttribute("data-theme","dark")}}catch(e){}</script>
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/site-refresh.css?v=20260717-6" />
 	</head>
-	<body class="is-preload">
+	<body class="is-preload projects-page">
 		<div id="page-wrapper">
 
 			<!-- Header -->
             <header id="header">
-                <h1><a href="index.html">Jiawei</a></h1>
+                <h1><a href="index.html">Jia-Wei Liao</a></h1>
                 <nav id="nav">
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="publications.html">Publications</a></li>
-                        <li><a href="projects.html" class="button" target="_blank">Projects</a></li>
+                        <li><a href="projects.html" aria-current="page">Projects</a></li>
                         <li><a href="talks.html">Talks</a></li>
                         <li><a href="teaching.html">Teaching</a></li>
                         <li><a href="activities.html">Activities</a></li>
@@ -35,15 +37,15 @@
                 <div class="row">
                     <div class="col-12">
                         <div id="filter-container">
-                            <h3>Tags</h3>
                             <div class="filter-row">
+                                <span class="filter-label">Tags:</span>
                                 <div id="filter-tags"></div>
                             </div>
                         </div>
 
                         <div class="publications-container">
 
-                            <section class="publication-card box" data-tags="#Design, #HCI, #Agent">
+                            <section class="publication-card box" data-tags="#HCI, #AI Agent">
                                 <h4 class="publication-title">Exploring AI-Supported Disciplinary Mediation in Student Project Team's Text-Based Communication</h4>
                                 <p class="publication-authors">Bing-Chen (Benson) Chiu, Ching-Jung (Vivi) Cheng, Yu-Chan (Bianca) Chung, Yu-Hsun Lin, <b>Jia-Wei Liao</b></p>
                                 <p class="publication-venue">Human-Computer Interaction and Human-Centered Computing Final Project, 2026</p>
@@ -53,13 +55,12 @@
                                     <li><a href="https://github.com/imbensonchiu/spritz" class="custom-button" target="_blank">Code</a></li>
                                     <li><a href="https://jwliao1209.github.io/spritz-website/" class="custom-button" target="_blank">Website</a></li>
                                 </div>
-                                <details class="publication-abs-collapsible">
-                                    <summary class="publication-abs-toggle">TL;DR</summary>
+                                <div class="publication-abstract">
                                     <p class="publication-abs">Spritz is a conversational agent that mediates disciplinary boundaries in text-based interdisciplinary collaboration.</p>
-                                </details>
+                                </div>
                             </section>
 
-                            <section class="publication-card box" data-tags="#Design, #HCI, #Multimodal">
+                            <section class="publication-card box" data-tags="#HCI, #Multimodal">
                                 <h4 class="publication-title">GANLAI: A Multimodal AI-Driven Virtual Reality Boxing Game Prototype for Stress Relief</h4>
                                 <p class="publication-authors">Yen-Ju Wang, Jia-Syuan Xiao, Yu-Ching Ger, Ting-Shan Pan, <b>Jia-Wei Liao</b>, Chen-Shi Liu, Yun-Chi Chen, Po-Feng Lin</p>
                                 <p class="publication-venue">Deep Learning for Music Analysis and Generation Final Project, 2024</p>
@@ -69,10 +70,9 @@
                                     <li><a href="projects/苦Gym甘來_poster.pdf" class="custom-button" target="_blank">Poster</a></li>
                                     <li><a href="projects/苦Gym甘來_paper.pdf" class="custom-button" target="_blank">Extended Abstract</a></li>
                                 </div>
-                                <details class="publication-abs-collapsible">
-                                    <summary class="publication-abs-toggle">TL;DR</summary>
+                                <div class="publication-abstract">
                                     <p class="publication-abs">GANLAI is a multimodal AI-driven VR boxing exergame that transforms exercise and emotional data into personalized narrative feedback for stress relief and reflection. By visualizing stress as in-game opponents and generating post-game encouragement and insights, it bridges immersive gameplay with real-world emotional processing.</p>
-                                </details>
+                                </div>
                             </section>
 
                             <section class="publication-card box" data-tags="#Music">
@@ -109,13 +109,6 @@
                                 </div>
                             </section>
 
-                            <section class="publication-card box" data-tags="#Business">
-                                <h4 class="publication-title">Optimizing Marketing Strategies and Data Analysis for Bag Brand</h4>
-                                <p class="publication-authors">Yi-Jhen Ciou, I-Ting Wang, Kai Yu, and <b>Jia-Wei Liao</b></p>
-                                <p class="publication-venue">TMBA Final Project, 2023</p>
-                                <div class="tags-container"></div>
-                            </section>
-
                             <section class="publication-card box" data-tags="#Vision">
                                 <div class="publication-split">
                                     <div class="publication-main">
@@ -126,10 +119,9 @@
                                         <div class="button-container">
                                             <li><a href="projects/a_small_object_detection_framework_for_uav_images_report.pdf" class="custom-button" target="_blank">Report</a></li>
                                         </div>
-                                        <details class="publication-abs-collapsible">
-                                            <summary class="publication-abs-toggle">TL;DR</summary>
+                                        <div class="publication-abstract">
                                             <p class="publication-abs">We developed a state-of-the-art one-stage detection model as the baseline framework for the competition, with the goal of accurately detecting small objects. As a result, we achieved a top 5 ranking in the competition with a public score of 0.7394 and a private score of 0.7550.</p>
-                                        </details>
+                                        </div>
                                     </div>
                                     <div class="publication-media">
                                         <img src="images/a_small_object_detection_framework_for_uav_images_image.jpeg" alt="" style="width: 100%;" />
@@ -148,10 +140,9 @@
                                             <li><a href="projects/crop_image_recognition_report.pdf" class="custom-button" target="_blank">Report</a></li>
                                             <li><a href="https://github.com/jwliao1209/Crop-Image-Recognition" class="custom-button" target="_blank">Code</a></li>
                                         </div>
-                                        <details class="publication-abs-collapsible">
-                                            <summary class="publication-abs-toggle">TL;DR</summary>
+                                        <div class="publication-abstract">
                                             <p class="publication-abs">We trained EfficientNet and Swin Transformer model, incorporating auto-augmentation techniques to enhance dataset diversity. Applied TTA and ensemble strategies, achieving a public ranking of 9th and a private ranking of 8th, with scores of 0.9329 and 0.9344, respectively.</p>
-                                        </details>
+                                        </div>
                                     </div>
                                     <div class="publication-media">
                                         <img src="images/crop_image_recognition_image.png" alt="" style="width: 100%;" />
@@ -168,13 +159,12 @@
                                     <li><a href="projects/explainable _information_tagging_for_natural_language_understanding_report.pdf" class="custom-button" target="_blank">Report</a></li>
                                     <li><a href="https://github.com/jwliao1209/Explainable-NLP" class="custom-button" target="_blank">Code</a></li>
                                 </div>
-                                <details class="publication-abs-collapsible">
-                                    <summary class="publication-abs-toggle">TL;DR</summary>
+                                <div class="publication-abstract">
                                     <p class="publication-abs">We constructed an explainable deep learning model for a NLP task by converting it into a summary task. We applied the T5 model to two datasets with different pre-processing methods and surpassed the original data's baseline. We achieved a public score of 0.801772 and a private score of 0.85190.</p>
-                                </details>
+                                </div>
                             </section>
 
-                            <section class="publication-card box" data-tags="#Vision, #Medical">
+                            <section class="publication-card box" data-tags="#Vision, #Medical AI">
                                 <div class="publication-split">
                                     <div class="publication-main">
                                         <h4 class="publication-title">Contour Segmentation for Spread Through Air Spaces in Lung Adenocarcinoma</h4>
@@ -185,10 +175,9 @@
                                             <li><a href="projects/aicup_2022_stas_report.pdf" class="custom-button" target="_blank">Report</a></li>
                                             <li><a href="https://github.com/jwliao1209/STAS-Segmentation" class="custom-button" target="_blank">Code</a></li>
                                         </div>
-                                        <details class="publication-abs-collapsible">
-                                            <summary class="publication-abs-toggle">TL;DR</summary>
+                                        <div class="publication-abstract">
                                             <p class="publication-abs">We developed a UNet-based model with a diverse backbone, addressing the imbalance of foreground and background through a combination of DiceLoss and Focal Loss. Our post-processing strategies improved accuracy, resulting in a 3rd place public ranking and 16th place private ranking, with scores of 0.9194 and 0.9109 respectively.</p>
-                                        </details>
+                                        </div>
                                     </div>
                                     <div class="publication-media">
                                         <img src="images/aicup_2022_stas_image.jpg" alt="" style="width: 100%;" />
@@ -207,10 +196,9 @@
                                             <li><a href="projects/supervised_learning_for_few_shot_orchid_types_classification_with_prior_guided_feature_report.pdf" class="custom-button" target="_blank">Report</a></li>
                                             <li><a href="https://github.com/jwliao1209/Orchid-Classification" class="custom-button" target="_blank">Code</a></li>
                                         </div>
-                                        <details class="publication-abs-collapsible">
-                                            <summary class="publication-abs-toggle">TL;DR</summary>
+                                        <div class="publication-abstract">
                                             <p class="publication-abs">We developed a few-shot learning approach to accurately distinguish visually similar orchid species. Using various models, data augmentations, and optimization techniques, we ensembled top predictions, achieving a Macro-F1 score of 0.9115 (public) and 0.8096 (private), ranking 15th out of 743 teams.</p>
-                                        </details>
+                                        </div>
                                     </div>
                                     <div class="publication-media">
                                         <img src="images/supervised_learning_for_few_shot_orchid_types_classification_with_prior_guided_feature_image.png" alt="" style="width: 100%;" />
@@ -228,10 +216,9 @@
                                         <div class="button-container">
                                             <li><a href="https://github.com/jwliao1209/Low-Power-Segmentation" class="custom-button" target="_blank">Code</a></li>
                                         </div>
-                                        <details class="publication-abs-collapsible">
-                                            <summary class="publication-abs-toggle">TL;DR</summary>
+                                        <div class="publication-abstract">
                                             <p class="publication-abs">We proposed a lightweight semantic segmentation model optimized for embedded systems and traffic scene analysis in Asian regions. The model balances accuracy, low power consumption, and real-time performance, designed for MediaTek's Dimensity Series platform. Achieved a public test score of 0.5624.</p>
-                                        </details>
+                                        </div>
                                     </div>
                                     <div class="publication-media">
                                         <img src="images/low_power_segmentation_image.png" alt="" style="width: 100%;" />
@@ -239,7 +226,7 @@
                                 </div>
                             </section>
 
-                            <section class="publication-card box" data-tags="#Vision, #Medical">
+                            <section class="publication-card box" data-tags="#Vision, #Medical AI">
                                 <div class="publication-split">
                                     <div class="publication-main">
                                         <h4 class="publication-title">Ultrasound Nerve Segmentation</h4>
@@ -250,10 +237,9 @@
                                             <li><a href="projects/ultrasound_nerve_segmentation_report.pdf" class="custom-button" target="_blank">Report</a></li>
                                             <li><a href="https://github.com/jwliao1209/Ultrasound-Nerve-Segmentation" class="custom-button" target="_blank">Code</a></li>
                                         </div>
-                                        <details class="publication-abs-collapsible">
-                                            <summary class="publication-abs-toggle">TL;DR</summary>
+                                        <div class="publication-abstract">
                                             <p class="publication-abs">We propose a deep learning method for ultrasound nerve segmentation using UNet with an EfficientNet backbone. Two novel techniques, Erosion Mask Smoothing (ELS) and adaptive Single Model Ensemble (ASME), improved performance. Achieved a private test score of 0.7234, surpassing the baseline.</p>
-                                        </details>
+                                        </div>
                                     </div>
                                     <div class="publication-media">
                                         <img src="images/ultrasound_nerve_segmentation_image.png" alt="" style="width: 100%;" />
@@ -261,7 +247,7 @@
                                 </div>
                             </section>
 
-                            <section class="publication-card box" data-tags="#ML, #Math">
+                            <section class="publication-card box" data-tags="#ML">
                                 <h4 class="publication-title">Low Rank Matrix Factorization for Recommender System</h4>
                                 <p class="publication-authors"><b>Jia-Wei Liao</b>, Kuok-Tong Ng, and Yi-Cheng Hung</p>
                                 <p class="publication-venue">Introduction to Scientific Computing Final Project, 2021</p>
@@ -282,7 +268,7 @@
                                 </div>
                             </section>
 
-                            <section class="publication-card box" data-tags="#ML, #Math">
+                            <section class="publication-card box" data-tags="#ML">
                                 <h4 class="publication-title">Solving the Biharmonic Equation by Deep Neural Network</h4>
                                 <p class="publication-authors"><b>Jia-Wei Liao</b>, Yu-Hsi Chen, and Woan-Rong Huang</p>
                                 <p class="publication-venue">Numerical Partial Differential Equations Final Project, 2021</p>
@@ -293,7 +279,7 @@
                                 </div>
                             </section>
 
-                            <section class="publication-card box" data-tags="#Vision, #Math">
+                            <section class="publication-card box" data-tags="#Vision">
                                 <h4 class="publication-title">3D Shape Morphing Animation based on Poisson Image Editing</h4>
                                 <p class="publication-authors"><b>Jia-Wei Liao</b> and Kuok-Tong Ng</p>
                                 <p class="publication-venue">3D Computational Geometry Final Project, 2021</p>
@@ -303,7 +289,7 @@
                                 </div>
                             </section>
 
-                            <section class="publication-card box" data-tags="#Vision, #Math">
+                            <section class="publication-card box" data-tags="#Vision">
                                 <h4 class="publication-title">Mean Curvature Flow on Graphs for Image Denoising</h4>
                                 <p class="publication-authors"><b>Jia-Wei Liao</b> and Kuok-Tong Ng</p>
                                 <p class="publication-venue">Image Processing with Partial Differential Equations Final Project, 2020</p>
@@ -314,7 +300,7 @@
                                 </div>
                             </section>
 
-                            <section class="publication-card box" data-tags="#Vision, #Math">
+                            <section class="publication-card box" data-tags="#Vision">
                                 <h4 class="publication-title">Online Dictionary Learning for Image Inpainting</h4>
                                 <p class="publication-authors"><b>Jia-Wei Liao</b> and Kuok-Tong Ng</p>
                                 <p class="publication-venue">Optimization for Data Science Final Project, 2020</p>
@@ -325,7 +311,7 @@
                                 </div>
                             </section>
 
-                            <section class="publication-card box" data-tags="#Vision, #Math">
+                            <section class="publication-card box" data-tags="#Vision">
                                 <h4 class="publication-title">Variational Models and Numerical Methods for Image Processing</h4>
                                 <p class="publication-authors"><b>Jia-Wei Liao</b>, Chun-Hsien Chen, and Chen-Yang Dai</p>
                                 <p class="publication-venue">NCTS-USRP Final Project, 2020</p>
@@ -345,7 +331,7 @@
         <!-- Footer -->
             <footer id="footer">
                 <ul class="copyright">
-                    <li>&copy; 2026 Jiawei. All rights reserved.</li>
+                    <li>&copy; 2026 Jia-Wei Liao. All rights reserved.</li>
                 </ul>
             </footer>
 
@@ -358,31 +344,44 @@
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+			<script src="assets/js/main.js?v=20260717-6"></script>
 
 			<script>
-				document.querySelectorAll(".box").forEach(box => {
+				function getTagClass(tag) {
+					return "tag-" + tag
+						.replace(/^#/, "")
+						.toLowerCase()
+						.replace(/[^a-z0-9]+/g, "-")
+						.replace(/^-|-$/g, "");
+				}
+
+				document.querySelectorAll(".publication-card").forEach(box => {
 					const tagsContainer = box.querySelector(".tags-container");
-					if (!tagsContainer) return;
 					const tags = box.getAttribute("data-tags").split(", ");
 					tags.forEach(tag => {
 						const span = document.createElement("span");
-						span.className = "tags";
-						span.textContent = tag;
+						span.className = `tags ${getTagClass(tag)}`;
+						span.textContent = tag.replace(/^#/, "");
 						tagsContainer.appendChild(span);
 					});
 				});
 
 				const uniqueTags = new Set();
-				document.querySelectorAll(".box").forEach(box => {
+				document.querySelectorAll(".publication-card").forEach(box => {
 					const tags = box.getAttribute("data-tags").split(", ");
 					tags.forEach(tag => uniqueTags.add(tag));
 				});
 
 				const filterTagsContainer = document.getElementById("filter-tags");
+				const allTagButton = document.createElement("span");
+				allTagButton.className = "filter-tags tag-all selected";
+				allTagButton.textContent = "All Projects";
+				allTagButton.setAttribute("data-tag", "__all__");
+				filterTagsContainer.appendChild(allTagButton);
+
 				uniqueTags.forEach(tag => {
 					const tagButton = document.createElement("span");
-					tagButton.className = "filter-tags";
+					tagButton.className = `filter-tags ${getTagClass(tag)}`;
 					tagButton.textContent = tag.replace(/^#/, "");
 					tagButton.setAttribute("data-tag", tag);
 					filterTagsContainer.appendChild(tagButton);
@@ -393,19 +392,30 @@
 					if (e.target.classList.contains("filter-tags")) {
 						const tag = e.target.getAttribute("data-tag");
 
-						if (selectedTags.has(tag)) {
+						if (tag === "__all__") {
+							selectedTags.clear();
+							document.querySelectorAll(".filter-tags").forEach(button => {
+								button.classList.remove("selected");
+							});
+							e.target.classList.add("selected");
+						} else if (selectedTags.has(tag)) {
 							selectedTags.delete(tag);
 							e.target.classList.remove("selected");
 						} else {
 							selectedTags.add(tag);
 							e.target.classList.add("selected");
 						}
+
+						if (tag !== "__all__") {
+							allTagButton.classList.toggle("selected", selectedTags.size === 0);
+						}
+
 						filterPublications();
 					}
 				});
 
 				function filterPublications() {
-					const publications = document.querySelectorAll(".box");
+					const publications = document.querySelectorAll(".publication-card");
 					publications.forEach(publication => {
 						const tags = publication.getAttribute("data-tags").split(", ");
 						if (selectedTags.size === 0) {

@@ -1,22 +1,24 @@
 <!DOCTYPE HTML>
 
-<html>
+<html lang="en">
 	<head>
-		<title>Publications</title>
+		<title>Publications | Jia-Wei Liao</title>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<script>try{if(localStorage.getItem("site-theme")==="dark"){document.documentElement.setAttribute("data-theme","dark")}}catch(e){}</script>
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/site-refresh.css?v=20260717-6" />
 	</head>
-	<body class="is-preload">
+	<body class="is-preload publications-page-body">
 		<div id="page-wrapper">
 
 			<!-- Header -->
 			<header id="header">
-				<h1><a href="index.html">Jiawei</a></h1>
+				<h1><a href="index.html">Jia-Wei Liao</a></h1>
 				<nav id="nav">
 					<ul>
-						<li><a href="index.html" target="_blank">Home</a></li>
-						<li><a href="publications.html" class="button">Publications</a></li>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="publications.html" aria-current="page">Publications</a></li>
 						<li><a href="projects.html">Projects</a></li>
 						<li><a href="talks.html">Talks</a></li>
 						<li><a href="teaching.html">Teaching</a></li>
@@ -35,14 +37,14 @@
 				<div class="row">
 					<div class="col-12">
 						<div id="filter-container">
-							<h3>Tags</h3>
 							<div class="filter-row">
+								<span class="filter-label">Tags:</span>
 								<div id="filter-tags"></div>
 							</div>
 						</div>
 
 						<div class="publications-container">
-							<section class="publication-card box" data-tags="#Diffusion, #Guidance">
+							<section class="publication-card box" data-tags="#Generative Models, #Inference-time Guidance">
 								<h4 class="publication-title">DiffRGD: An Inference-time Diffusion Guidance Through Riemannian Gradient Descent</h4>
 								<p class="publication-authors">
 									<b>Jia-Wei Liao</b>,
@@ -60,11 +62,11 @@
 								</div>
 							</section>
 
-							<section class="publication-card box" data-tags="#Diffusion">
+							<section class="publication-card box" data-tags="#Generative Models">
 								<h4 class="publication-title">COT-FM: Cluster-wise Optimal Transport Flow Matching</h4>
 								<p class="publication-authors">
 									Chiensheng Chiang*,
-									Kuan-Hsun Tu*,
+									<a href="https://syun413.github.io/">Kuan-Hsun Tu</a>*,
 									<b>Jia-Wei Liao</b>*,
 									<a href="https://www.csie.ntu.edu.tw/~ccf/">Cheng-Fu Chou</a>,
 									<a href="https://twke18.github.io/">Tsung-Wei Ke</a>
@@ -75,13 +77,9 @@
 									<li><a href="https://arxiv.org/abs/2603.13395" class="custom-button" target="_blank">Paper</a></li>
 									<li><a href="https://embodiedai-ntu.github.io/cotfm/index.html" class="custom-button" target="_blank">Project Page</a></li>
 								</div>
-								<!-- <details class="publication-abs-collapsible">
-									<summary class="publication-abs-toggle">TL;DR</summary>
-									<p class="publication-abs">Diffusion Geodesic Guidance (DGG) is a zero-shot geometry-aware diffusion guidance method that updates samples along hyperspherical geodesics to preserve the model prior while improving music restoration quality without retraining.</p>
-								</details> -->
 							</section>
 
-							<section class="publication-card box" data-tags="#Diffusion, #Attack">
+							<section class="publication-card box" data-tags="#Generative Models, #AI Safety">
 								<div class="publication-split">
 									<div class="publication-main">
 										<h4 class="publication-title">M-ErasureBench: A Comprehensive Multimodal Evaluation Benchmark for Concept Erasure in Diffusion Models</h4>
@@ -98,10 +96,9 @@
 											<li><a href="projects/wacv26_m-erasurebench/slides.pdf" class="custom-button" target="_blank">Slides</a></li>
 											<li><a href="projects/wacv26_m-erasurebench/poster.pdf" class="custom-button" target="_blank">Poster</a></li>
 										</div>
-										<details class="publication-abs-collapsible">
-											<summary class="publication-abs-toggle">TL;DR</summary>
+										<div class="publication-abstract">
 											<p class="publication-abs">M-ErasureBench is a multimodal benchmark revealing that existing diffusion concept-erasure methods fail beyond text prompts and introduces an inference-time module that significantly improves erasure robustness without retraining.</p>
-										</details>
+										</div>
 									</div>
 									<div class="publication-media">
 										<div class="youtube-video">
@@ -113,8 +110,7 @@
 								</div>
 							</section>
 
-							<div class="publications-container">
-							<section class="publication-card box" data-tags="#Denoising">
+							<section class="publication-card box" data-tags="#Low-level Vision">
 								<h4 class="publication-title">An Improved Variational Method for Image Denoising</h4>
 								<p class="publication-authors">
 									<a href="https://angusbb.github.io/">Jing-En Huang</a>*,
@@ -130,7 +126,7 @@
 								</div>
 							</section>
 
-							<section class="publication-card box" data-tags="#Diffusion, #Guidance">
+							<section class="publication-card box" data-tags="#Generative Models, #Inference-time Guidance">
 								<h4 class="publication-title">Zero-shot Geometry-Aware Diffusion Guidance for Music Restoration</h4>
 								<p class="publication-authors">
 									<b>Jia-Wei Liao</b>,
@@ -147,13 +143,12 @@
 									<li><a href="https://openreview.net/forum?id=pKmjzw8TO8" class="custom-button" target="_blank">Paper</a></li>
 									<li><a href="projects/neuripsw2025_dgg.pdf" class="custom-button" target="_blank">Poster</a></li>
 								</div>
-								<details class="publication-abs-collapsible">
-									<summary class="publication-abs-toggle">TL;DR</summary>
+								<div class="publication-abstract">
 									<p class="publication-abs">Diffusion Geodesic Guidance (DGG) is a zero-shot geometry-aware diffusion guidance method that updates samples along hyperspherical geodesics to preserve the model prior while improving music restoration quality without retraining.</p>
-								</details>
+								</div>
 							</section>
 
-							<section class="publication-card box" data-tags="#Segmentation">
+							<section class="publication-card box" data-tags="#Visual Perception">
 								<h4 class="publication-title">BEVAN: Bilateral Efficient Visual Attention Network for Real-Time Semantic Segmentation</h4>
 								<p class="publication-authors">
 									Ping-Mao Huang,
@@ -168,13 +163,12 @@
 									<li><a href="https://arxiv.org/abs/2508.07300" class="custom-button" target="_blank">Paper</a></li>
 									<li><a href="https://github.com/maomao0819/BEVANet" class="custom-button" target="_blank">Code</a></li>
 								</div>
-								<details class="publication-abs-collapsible">
-									<summary class="publication-abs-toggle">TL;DR</summary>
+								<div class="publication-abstract">
 									<p class="publication-abs">BEVANet is a bilateral large-kernel attention network that achieves state-of-the-art real-time semantic segmentation by adaptively expanding receptive fields and fusing semantic, structural, and boundary features efficiently.</p>
-								</details>
+								</div>
 							</section>
 
-						<section class="publication-card box" data-tags="#Diffusion, #Guidance">
+						<section class="publication-card box" data-tags="#Generative Models, #Inference-time Guidance">
 							<div class="publication-split">
 								<div class="publication-main">
 									<h4 class="publication-title">DiffQRCoder: Diffusion-based Aesthetic QR Code Generation with Scanning Robustness Guided Iterative Refinement</h4>
@@ -196,10 +190,9 @@
 										<li><a href="https://jwliao1209.github.io/DiffQRCoder/_astro/slides.ClYDGbgS.pdf" class="custom-button" target="_blank">Slides</a></li>
 										<li><a href="https://jwliao1209.github.io/DiffQRCoder/_astro/poster.Dia1PEDY.pdf" class="custom-button" target="_blank">Poster</a></li>
 									</div>
-									<details class="publication-abs-collapsible">
-										<summary class="publication-abs-toggle">TL;DR</summary>
+									<div class="publication-abstract">
 										<p class="publication-abs">DiffQRCoder is a training-free diffusion framework that generates visually appealing QR codes while preserving high scanning robustness through geometry-aware perceptual guidance and iterative refinement.</p>
-									</details>
+									</div>
 								</div>
 								<div class="publication-media">
 									<div class="youtube-video">
@@ -211,7 +204,7 @@
 							</div>
 						</section>
 
-						<section class="publication-card box" data-tags="#Diffusion, #Attack">
+						<section class="publication-card box" data-tags="#Generative Models, #AI Safety">
 							<div class="publication-split">
 								<div class="publication-main">
 									<h4 class="publication-title">Pixel Is Not A Barrier: An Effective Evasion Attack for Pixel-Domain Diffusion Models</h4>
@@ -232,10 +225,9 @@
 										<li><a href="https://alexpeng517.github.io/AtkPDM/_astro/slides.CoPlVrhE.pdf" class="custom-button" target="_blank">Slides</a></li>
 										<li><a href="https://alexpeng517.github.io/AtkPDM/_astro/poster.BtAsMwQa.pdf" class="custom-button" target="_blank">Poster</a></li>
 									</div>
-									<details class="publication-abs-collapsible">
-										<summary class="publication-abs-toggle">TL;DR</summary>
+									<div class="publication-abstract">
 										<p class="publication-abs">AtkPDM is a feature-space adversarial attack framework that crafts imperceptible perturbations to protect images from unauthorized diffusion-based editing by disrupting UNet representations while preserving visual fidelity.</p>
-									</details>
+									</div>
 								</div>
 								<div class="publication-media">
 									<div class="youtube-video">
@@ -247,7 +239,7 @@
 							</div>
 						</section>
 
-							<section class="publication-card box" data-tags="#Active Learning, #Detection">
+							<section class="publication-card box" data-tags="#Visual Perception">
 								<h4 class="publication-title">Distribution Discrepancy and Feature Heterogeneity for Active 3D Object Detection</h4>
 								<p class="publication-authors">
 									Huang-Yu Chen,
@@ -262,13 +254,12 @@
 									<li><a href="https://arxiv.org/abs/2409.05425" class="custom-button" target="_blank">Paper</a></li>
 									<li><a href="https://github.com/Coolshanlan/DDFH-active-3Ddet" class="custom-button" target="_blank">Code</a></li>
 								</div>
-								<details class="publication-abs-collapsible">
-									<summary class="publication-abs-toggle">TL;DR</summary>
+								<div class="publication-abstract">
 									<p class="publication-abs">DDFH is an active learning framework for LiDAR-based 3D object detection that selects the most informative samples by jointly modeling distribution discrepancy and feature heterogeneity to reduce annotation cost while improving detection performance.</p>
-								</details>
+								</div>
 							</section>
 
-							<section class="publication-card box" data-tags="#Medical, #Segmentation">
+							<section class="publication-card box" data-tags="#Medical AI, #Visual Perception">
 								<div class="publication-split">
 									<div class="publication-main">
 									<h4 class="publication-title">An UNet-Based Brain Tumor Segmentation Framework via Optimal Mass Transportation Pre-processing</h4>
@@ -285,17 +276,18 @@
 									<div class="button-container">
 										<li><a href="https://link.springer.com/chapter/10.1007/978-3-031-33842-7_19" class="custom-button" target="_blank">Paper</a></li>
 									</div>
-									<details class="publication-abs-collapsible">
-										<summary class="publication-abs-toggle">TL;DR</summary>
+									<div class="publication-abstract">
 										<p class="publication-abs">This paper proposes a two-phase UNet-based brain tumor segmentation framework that uses optimal mass transportation to enlarge tumor regions and enhance data diversity, significantly improving MRI segmentation accuracy and robustness.</p>
-									</details>
+									</div>
 								</div>
-								<div class="publication-media">
-									<div class="youtube-video">
-										<div class="videobox">
-											<iframe src="https://www.youtube.com/embed/T6q67Iyo-Ec?si=5AysuRO6NQffj0SB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+									<div class="publication-media">
+										<div class="youtube-video">
+											<div class="videobox">
+												<iframe src="https://www.youtube.com/embed/T6q67Iyo-Ec?si=5AysuRO6NQffj0SB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+											</div>
 										</div>
 									</div>
+								</div>
 							</section>
 						</div>
 					</div>
@@ -305,7 +297,7 @@
 			<!-- Footer -->
 			<footer id="footer">
 				<ul class="copyright">
-					<li>&copy; 2026 Jiawei. All rights reserved.</li>
+					<li>&copy; 2026 Jia-Wei Liao. All rights reserved.</li>
 				</ul>
 			</footer>
 
@@ -318,16 +310,24 @@
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+			<script src="assets/js/main.js?v=20260717-6"></script>
 
 			<script>
+				function getTagClass(tag) {
+					return "tag-" + tag
+						.replace(/^#/, "")
+						.toLowerCase()
+						.replace(/[^a-z0-9]+/g, "-")
+						.replace(/^-|-$/g, "");
+				}
+
 				document.querySelectorAll(".publication-card").forEach(box => {
 					const tagsContainer = box.querySelector(".tags-container");
 					const tags = box.getAttribute("data-tags").split(", ");
 					tags.forEach(tag => {
 						const span = document.createElement("span");
-						span.className = "tags";
-						span.textContent = tag;
+						span.className = `tags ${getTagClass(tag)}`;
+						span.textContent = tag.replace(/^#/, "");
 						tagsContainer.appendChild(span);
 					});
 				});
@@ -339,9 +339,15 @@
 				});
 		
 				const filterTagsContainer = document.getElementById("filter-tags");
+				const allTagButton = document.createElement("span");
+				allTagButton.className = "filter-tags tag-all selected";
+				allTagButton.textContent = "All Papers";
+				allTagButton.setAttribute("data-tag", "__all__");
+				filterTagsContainer.appendChild(allTagButton);
+
 				uniqueTags.forEach(tag => {
 					const tagButton = document.createElement("span");
-					tagButton.className = "filter-tags";
+					tagButton.className = `filter-tags ${getTagClass(tag)}`;
 					tagButton.textContent = tag.replace(/^#/, "");
 					tagButton.setAttribute("data-tag", tag);
 					filterTagsContainer.appendChild(tagButton);
@@ -352,13 +358,24 @@
 					if (e.target.classList.contains("filter-tags")) {
 						const tag = e.target.getAttribute("data-tag");
 
-						if (selectedTags.has(tag)) {
+						if (tag === "__all__") {
+							selectedTags.clear();
+							document.querySelectorAll(".filter-tags").forEach(button => {
+								button.classList.remove("selected");
+							});
+							e.target.classList.add("selected");
+						} else if (selectedTags.has(tag)) {
 							selectedTags.delete(tag);
 							e.target.classList.remove("selected");
 						} else {
 							selectedTags.add(tag);
 							e.target.classList.add("selected");
 						}
+
+						if (tag !== "__all__") {
+							allTagButton.classList.toggle("selected", selectedTags.size === 0);
+						}
+
 						filterPublications();
 					}
 				});
