@@ -338,6 +338,14 @@ h3 {
 	line-height: 1.75;
 }
 
+.keyword-highlight {
+	text-decoration-line: underline;
+	text-decoration-color: #9cc7ff;
+	text-decoration-thickness: 0.18em;
+	text-decoration-skip-ink: none;
+	text-underline-offset: 0.16em;
+}
+
 .about-list {
 	display: grid;
 	grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -369,6 +377,10 @@ h3 {
 	color: var(--site-muted);
 	font-size: 0.86rem;
 	line-height: 1.6;
+}
+
+.research-section .about-list span {
+	color: var(--site-ink);
 }
 
 .education-container {
@@ -1809,6 +1821,7 @@ body::before {
 
 .home-page .about-list strong,
 .home-page .about-list span {
+	display: inline;
 	font-size: inherit;
 	line-height: inherit;
 }
@@ -2007,6 +2020,13 @@ html[data-theme="dark"] .home-page .profile-picture {
 	border: 0;
 }
 
+html[data-theme="dark"] .home-page .profile-name,
+html[data-theme="dark"] .home-page .profile-name.phd-candidate,
+html[data-theme="dark"] .home-page .profile-name.university,
+html[data-theme="dark"] .home-page .profile-container > .icons a {
+	color: #ffffff;
+}
+
 html[data-theme="dark"] #navButton {
 	border-color: rgba(255, 255, 255, 0.1);
 	background: rgba(20, 23, 27, 0.55);
@@ -2077,4 +2097,62 @@ html[data-theme="dark"] .education-item:hover {
 
 html[data-theme="dark"] #main.container.home h2 {
 	border-bottom-color: var(--site-line);
+}
+
+/* Compact mobile navigation */
+@media screen and (max-width: 840px) {
+	#page-wrapper {
+		padding-top: 0;
+	}
+
+	body::before {
+		top: 0;
+	}
+
+	#navButton {
+		top: 14px;
+		left: 14px;
+		width: 44px;
+		height: 44px;
+		border: 0;
+		border-radius: 0;
+		background: transparent;
+		box-shadow: none;
+		-webkit-backdrop-filter: none;
+		backdrop-filter: none;
+	}
+
+	#navButton .toggle::before {
+		top: 0;
+		left: 0;
+		width: 44px;
+		height: 44px;
+		border: 1px solid rgba(98, 105, 112, 0.18);
+		border-radius: 12px;
+		background: rgba(255, 255, 255, 0.78);
+		color: var(--site-ink);
+		font-size: 15px;
+		line-height: 42px;
+		box-shadow: 0 10px 24px rgba(24, 33, 31, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.86);
+		-webkit-backdrop-filter: blur(12px) saturate(130%);
+		backdrop-filter: blur(12px) saturate(130%);
+	}
+
+	.home-page .profile-container {
+		padding-top: 1.5rem;
+	}
+}
+
+@media screen and (max-width: 840px) {
+	html[data-theme="dark"] #navButton {
+		background: transparent;
+		box-shadow: none;
+	}
+
+	html[data-theme="dark"] #navButton .toggle::before {
+		border-color: rgba(255, 255, 255, 0.12);
+		background: rgba(20, 23, 27, 0.72);
+		color: #ffffff;
+		box-shadow: 0 10px 24px rgba(0, 0, 0, 0.42), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+	}
 }
