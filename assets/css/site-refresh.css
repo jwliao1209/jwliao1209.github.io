@@ -1218,6 +1218,7 @@ body::before {
 	--tag-border: #b9bfbc;
 	--tag-text: #4a514e;
 	--tag-selected: #252b29;
+	--tag-dark-bg: rgba(185, 191, 188, 0.56);
 }
 
 .tag-generative-models {
@@ -1225,6 +1226,7 @@ body::before {
 	--tag-border: #92cabf;
 	--tag-text: #2f7468;
 	--tag-selected: #3e8579;
+	--tag-dark-bg: rgba(146, 202, 191, 0.56);
 }
 
 .tag-inference-time-guidance {
@@ -1232,6 +1234,7 @@ body::before {
 	--tag-border: #ddc47a;
 	--tag-text: #876d20;
 	--tag-selected: #967b2c;
+	--tag-dark-bg: rgba(221, 196, 122, 0.56);
 }
 
 .tag-ai-safety {
@@ -1239,6 +1242,7 @@ body::before {
 	--tag-border: #e5aaaa;
 	--tag-text: #a34646;
 	--tag-selected: #b55252;
+	--tag-dark-bg: rgba(229, 170, 170, 0.56);
 }
 
 .tag-low-level-vision {
@@ -1246,6 +1250,7 @@ body::before {
 	--tag-border: #dca9be;
 	--tag-text: #94506c;
 	--tag-selected: #a35d78;
+	--tag-dark-bg: rgba(220, 169, 190, 0.56);
 }
 
 .tag-visual-perception {
@@ -1253,6 +1258,7 @@ body::before {
 	--tag-border: #e7b58c;
 	--tag-text: #9a5e2e;
 	--tag-selected: #aa6b39;
+	--tag-dark-bg: rgba(231, 181, 140, 0.56);
 }
 
 .tag-medical-ai {
@@ -1260,6 +1266,7 @@ body::before {
 	--tag-border: #c5addc;
 	--tag-text: #765493;
 	--tag-selected: #8361a0;
+	--tag-dark-bg: rgba(197, 173, 220, 0.56);
 }
 
 .tag-hci {
@@ -1267,6 +1274,7 @@ body::before {
 	--tag-border: #a9bfdf;
 	--tag-text: #496d9d;
 	--tag-selected: #577aaa;
+	--tag-dark-bg: rgba(169, 191, 223, 0.56);
 }
 
 .tag-ai-agent {
@@ -1274,6 +1282,7 @@ body::before {
 	--tag-border: #e5aaaa;
 	--tag-text: #a34646;
 	--tag-selected: #b55252;
+	--tag-dark-bg: rgba(229, 170, 170, 0.56);
 }
 
 .tag-multimodal {
@@ -1281,6 +1290,7 @@ body::before {
 	--tag-border: #92cabf;
 	--tag-text: #2f7468;
 	--tag-selected: #3e8579;
+	--tag-dark-bg: rgba(146, 202, 191, 0.56);
 }
 
 .tag-music {
@@ -1288,6 +1298,7 @@ body::before {
 	--tag-border: #dca9be;
 	--tag-text: #94506c;
 	--tag-selected: #a35d78;
+	--tag-dark-bg: rgba(220, 169, 190, 0.56);
 }
 
 .tag-nlp {
@@ -1295,6 +1306,7 @@ body::before {
 	--tag-border: #e7b58c;
 	--tag-text: #9a5e2e;
 	--tag-selected: #aa6b39;
+	--tag-dark-bg: rgba(231, 181, 140, 0.56);
 }
 
 .tag-ml {
@@ -1302,6 +1314,7 @@ body::before {
 	--tag-border: #afcca2;
 	--tag-text: #577c49;
 	--tag-selected: #668b57;
+	--tag-dark-bg: rgba(175, 204, 162, 0.56);
 }
 
 .tag-vision {
@@ -1309,6 +1322,7 @@ body::before {
 	--tag-border: #ddc47a;
 	--tag-text: #876d20;
 	--tag-selected: #967b2c;
+	--tag-dark-bg: rgba(221, 196, 122, 0.56);
 }
 
 .talks-page .publication-venue a {
@@ -1534,7 +1548,7 @@ body::before {
 @media screen and (max-width: 980px) {
 	.home-page .profile-container {
 		padding: 2rem;
-		border: 1px solid rgba(43, 78, 163, 0.3);
+		border: 0;
 		border-radius: 3px;
 		text-align: left;
 		align-items: flex-start;
@@ -1971,6 +1985,18 @@ html[data-theme="dark"] .teaching-list .honor-date a:hover {
 	color: var(--site-accent);
 }
 
+html[data-theme="dark"] .publications-page .tags,
+html[data-theme="dark"] .publications-page .filter-tags {
+	background: var(--tag-dark-bg);
+	color: #ffffff;
+}
+
+html[data-theme="dark"] .publications-page .filter-tags:hover,
+html[data-theme="dark"] .publications-page .filter-tags.selected {
+	background: var(--tag-dark-bg);
+	color: #ffffff;
+}
+
 html[data-theme="dark"] .activity-title a,
 html[data-theme="dark"] .teaching-meta a,
 html[data-theme="dark"] .teaching-list .honor-date a {
@@ -1978,7 +2004,7 @@ html[data-theme="dark"] .teaching-list .honor-date a {
 }
 
 html[data-theme="dark"] .home-page .profile-picture {
-	border-color: var(--site-line);
+	border: 0;
 }
 
 html[data-theme="dark"] #navButton {
