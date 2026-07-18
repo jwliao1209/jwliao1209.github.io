@@ -356,6 +356,13 @@ h3 {
 	margin-bottom: 3rem;
 }
 
+.research-section > p {
+	margin: 0 0 1rem;
+	color: #17191c;
+	font-size: 0.98rem;
+	line-height: 1.75;
+}
+
 .about-list li {
 	margin: 0;
 	padding: 1rem;
