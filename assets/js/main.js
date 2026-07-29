@@ -7,9 +7,7 @@
 (function($) {
 
 	var	$window = $(window),
-		$body = $('body'),
-		$header = $('#header'),
-		$banner = $('#banner');
+		$body = $('body');
 
 	// Breakpoints.
 		breakpoints({
@@ -27,10 +25,6 @@
 				$body.removeClass('is-preload');
 			}, 100);
 		});
-
-	// Dropdowns: intentionally not initialized. The nav is flat (no submenus),
-	// and dropotron's stopPropagation on every link would block the liquid
-	// indicator's click handler on the ul.
 
 	// NavPanel.
 
@@ -130,24 +124,6 @@
 
 			syncButtons();
 		})();
-
-	// Header.
-		if (!browser.mobile
-		&&	$header.hasClass('alt')
-		&&	$banner.length > 0) {
-
-			$window.on('load', function() {
-
-				$banner.scrollex({
-					bottom:		$header.outerHeight(),
-					terminate:	function() { $header.removeClass('alt'); },
-					enter:		function() { $header.addClass('alt reveal'); },
-					leave:		function() { $header.removeClass('alt'); }
-				});
-
-			});
-
-		}
 
 	// Liquid navigation indicator.
 		(function() {

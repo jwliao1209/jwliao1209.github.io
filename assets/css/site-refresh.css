@@ -195,7 +195,12 @@ h3 {
 .button-container {
 	gap: 0.5rem;
 	flex-wrap: wrap;
+	margin: 0;
 	padding: 0.8rem 0 0;
+}
+
+.button-container > li {
+	padding-left: 0;
 }
 
 .custom-button {
@@ -1227,6 +1232,7 @@ body::before {
 	border-radius: 10px;
 	background: #fff;
 	font-size: 0.8rem;
+	transition: border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease;
 }
 
 .custom-button:hover {
@@ -1236,11 +1242,17 @@ body::before {
 	box-shadow: 3px 3px 0 rgba(43, 78, 163, 0.35);
 }
 
-.publications-page .custom-button:hover {
-	border-color: #75bce5;
-	background: #fff;
-	color: #75bce5;
+.publications-page .custom-button:hover,
+.publications-page .custom-button:focus-visible {
+	border-color: #5eb1df !important;
+	background: #5eb1df !important;
+	color: #ffffff !important;
 	box-shadow: none;
+}
+
+.publications-page .custom-button:hover i,
+.publications-page .custom-button:focus-visible i {
+	color: inherit !important;
 }
 
 #filter-container {
@@ -1312,15 +1324,12 @@ body::before {
 	border: 0;
 	background: var(--tag-bg);
 	color: var(--tag-text);
+	transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-.publications-page .filter-tags:hover {
-	background: var(--tag-bg);
-	color: var(--tag-selected);
-}
-
+.publications-page .filter-tags:hover,
 .publications-page .filter-tags.selected {
-	background: var(--tag-selected);
+	background: color-mix(in srgb, var(--tag-selected) 60%, #ffffff);
 	color: #ffffff;
 	box-shadow: none;
 }
@@ -2120,10 +2129,11 @@ html[data-theme="dark"] .custom-button:hover {
 	color: var(--site-accent);
 }
 
-html[data-theme="dark"] .publications-page .custom-button:hover {
-	border-color: #75bce5;
-	background: var(--site-surface);
-	color: #75bce5;
+html[data-theme="dark"] .publications-page .custom-button:hover,
+html[data-theme="dark"] .publications-page .custom-button:focus-visible {
+	border-color: #75bce5 !important;
+	background: #75bce5 !important;
+	color: #11161b !important;
 	box-shadow: none;
 }
 
@@ -2145,9 +2155,14 @@ html[data-theme="dark"] .publications-page .filter-tags {
 	color: #ffffff;
 }
 
+html[data-theme="dark"] .publications-page .filter-tags {
+	background: color-mix(in srgb, var(--tag-border) 32%, transparent);
+	color: #e9edf1;
+}
+
 html[data-theme="dark"] .publications-page .filter-tags:hover,
 html[data-theme="dark"] .publications-page .filter-tags.selected {
-	background: var(--tag-dark-bg);
+	background: color-mix(in srgb, var(--tag-selected) 60%, #ffffff);
 	color: #ffffff;
 }
 
