@@ -7,7 +7,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<script>try{if(localStorage.getItem("site-theme")==="dark"){document.documentElement.setAttribute("data-theme","dark")}}catch(e){}</script>
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="stylesheet" href="assets/css/site-refresh.css?v=20260717-6" />
+		<link rel="stylesheet" href="assets/css/site-refresh.css?v=20260729-12" />
+		<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 	</head>
 	<body class="is-preload publications-page-body">
 		<div id="page-wrapper">
@@ -59,23 +60,42 @@
 								<div class="button-container">
 									<li><a href="https://arxiv.org/abs/2606.28417" class="custom-button" target="_blank">Paper</a></li>
 									<li><a href="https://diffrgd.github.io/" class="custom-button" target="_blank">Project Page</a></li>
+									<li><a href="https://github.com/jwliao1209/DiffRGD" class="custom-button" target="_blank">Code</a></li>
+								</div>
+								<div class="publication-abstract">
+									<p class="publication-abs">DiffRGD is a plug-and-play inference-time guidance method that preserves the latent Gaussian structure of pretrained diffusion models by optimizing each sampling step on a spherical manifold using Riemannian gradient descent.</p>
 								</div>
 							</section>
 
 							<section class="publication-card box" data-tags="#Generative Models">
-								<h4 class="publication-title">COT-FM: Cluster-wise Optimal Transport Flow Matching</h4>
-								<p class="publication-authors">
-									Chiensheng Chiang*,
-									<a href="https://syun413.github.io/">Kuan-Hsun Tu</a>*,
-									<b>Jia-Wei Liao</b>*,
-									<a href="https://www.csie.ntu.edu.tw/~ccf/">Cheng-Fu Chou</a>,
-									<a href="https://twke18.github.io/">Tsung-Wei Ke</a>
-								</p>
-								<p class="publication-venue">CVPR 2026</p>
-								<div class="tags-container"></div>
-								<div class="button-container">
-									<li><a href="https://arxiv.org/abs/2603.13395" class="custom-button" target="_blank">Paper</a></li>
-									<li><a href="https://embodiedai-ntu.github.io/cotfm/index.html" class="custom-button" target="_blank">Project Page</a></li>
+								<div class="publication-split">
+									<div class="publication-main">
+										<h4 class="publication-title">COT-FM: Cluster-wise Optimal Transport Flow Matching</h4>
+										<p class="publication-authors">
+											Chiensheng Chiang*,
+											<a href="https://syun413.github.io/">Kuan-Hsun Tu</a>*,
+											<b>Jia-Wei Liao</b>*,
+											<a href="https://www.csie.ntu.edu.tw/~ccf/">Cheng-Fu Chou</a>,
+											<a href="https://twke18.github.io/">Tsung-Wei Ke</a>
+										</p>
+										<p class="publication-venue">CVPR 2026</p>
+										<div class="tags-container"></div>
+										<div class="button-container">
+											<li><a href="https://arxiv.org/abs/2603.13395" class="custom-button" target="_blank">Paper</a></li>
+											<li><a href="https://embodiedai-ntu.github.io/cotfm/index.html" class="custom-button" target="_blank">Project Page</a></li>
+											<li><a href="https://github.com/EmbodiedAI-NTU/COT-FM" class="custom-button" target="_blank">Code</a></li>
+										</div>
+										<div class="publication-abstract">
+											<p class="publication-abs">COT-FM improves Flow Matching by clustering target samples and assigning each cluster a dedicated source distribution, producing straighter transport trajectories for faster and more reliable generation.</p>
+										</div>
+									</div>
+									<div class="publication-media">
+										<div class="youtube-video">
+											<div class="videobox">
+												<iframe src="https://www.youtube.com/embed/l_pf2aiP3Wo" title="COT-FM: Cluster-wise Optimal Transport Flow Matching" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+											</div>
+										</div>
+									</div>
 								</div>
 							</section>
 
@@ -124,6 +144,9 @@
 								<div class="button-container">
 									<li><a href="https://arxiv.org/abs/2410.02587" class="custom-button" target="_blank">Paper</a></li>
 								</div>
+								<div class="publication-abstract">
+									<p class="publication-abs">MixTV is an image-denoising model that combines <span class="math-inline"><i>L</i><sub>1</sub></span> and <span class="math-inline"><i>L</i><sub>2</sub></span> data-fidelity terms to handle multiple and mixed noise types, while also establishing uniqueness of the solution and convergence of the algorithm.</p>
+								</div>
 							</section>
 
 							<section class="publication-card box" data-tags="#Generative Models, #Inference-time Guidance">
@@ -144,7 +167,7 @@
 									<li><a href="projects/neuripsw2025_dgg.pdf" class="custom-button" target="_blank">Poster</a></li>
 								</div>
 								<div class="publication-abstract">
-									<p class="publication-abs">Diffusion Geodesic Guidance (DGG) is a zero-shot geometry-aware diffusion guidance method that updates samples along hyperspherical geodesics to preserve the model prior while improving music restoration quality without retraining.</p>
+									<p class="publication-abs">DGG is a zero-shot geometry-aware diffusion guidance method that updates samples along hyperspherical geodesics to preserve the model prior while improving music restoration quality without retraining.</p>
 								</div>
 							</section>
 
@@ -185,8 +208,8 @@
 									<div class="tags-container"></div>
 									<div class="button-container">
 										<li><a href="https://arxiv.org/abs/2409.06355" class="custom-button" target="_blank">Paper</a></li>
-										<li><a href="https://github.com/jwliao1209/DiffQRCoder" class="custom-button" target="_blank">Code</a></li>
 										<li><a href="https://jwliao1209.github.io/DiffQRCoder/" class="custom-button" target="_blank">Project Page</a></li>
+										<li><a href="https://github.com/jwliao1209/DiffQRCoder" class="custom-button" target="_blank">Code</a></li>
 										<li><a href="https://jwliao1209.github.io/DiffQRCoder/_astro/slides.ClYDGbgS.pdf" class="custom-button" target="_blank">Slides</a></li>
 										<li><a href="https://jwliao1209.github.io/DiffQRCoder/_astro/poster.Dia1PEDY.pdf" class="custom-button" target="_blank">Poster</a></li>
 									</div>
@@ -220,8 +243,8 @@
 									<div class="tags-container"></div>
 									<div class="button-container">
 										<li><a href="https://arxiv.org/abs/2408.11810" class="custom-button" target="_blank">Paper</a></li>
-										<li><a href="https://github.com/AlexPeng517/AtkPDM" class="custom-button" target="_blank">Code</a></li>
 										<li><a href="https://alexpeng517.github.io/AtkPDM/" class="custom-button" target="_blank">Project Page</a></li>
+										<li><a href="https://github.com/AlexPeng517/AtkPDM" class="custom-button" target="_blank">Code</a></li>
 										<li><a href="https://alexpeng517.github.io/AtkPDM/_astro/slides.CoPlVrhE.pdf" class="custom-button" target="_blank">Slides</a></li>
 										<li><a href="https://alexpeng517.github.io/AtkPDM/_astro/poster.BtAsMwQa.pdf" class="custom-button" target="_blank">Poster</a></li>
 									</div>
@@ -311,6 +334,7 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js?v=20260717-6"></script>
+			<script src="assets/js/button-icons.js?v=20260729-1"></script>
 
 			<script>
 				function getTagClass(tag) {

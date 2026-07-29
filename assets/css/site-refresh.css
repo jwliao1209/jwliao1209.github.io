@@ -421,9 +421,17 @@ h3 {
 	font-weight: 650;
 }
 
+.education-info p {
+	font-size: 0.98rem;
+}
+
 .education-department,
 .education-info .education-date {
 	color: var(--site-muted);
+}
+
+.education-info .education-date {
+	font-size: 0.82rem;
 }
 
 /* Lists */
@@ -608,7 +616,7 @@ h3 {
 .dyl-page #main .col-12 {
 	display: grid;
 	grid-template-columns: minmax(0, 1fr);
-	gap: 0.25rem;
+	gap: 1rem;
 }
 
 .talks-page .youtube-video {
@@ -616,14 +624,77 @@ h3 {
 	margin-top: 1rem;
 }
 
-.dyl-page .box img {
-	display: block;
-	margin-top: 0.75rem;
-	border-radius: 6px;
+.dyl-page .dyl-card {
+	margin: 0;
+	padding: 1.45rem 1.55rem;
+	border: 1px solid #e8e2dc;
+	border-radius: 8px;
+	background: rgba(255, 255, 255, 0.92);
+	box-shadow: none;
+	overflow: hidden;
 }
 
-.dyl-page .box p {
+.dyl-page .dyl-card::before,
+.dyl-page .dyl-card::after {
+	content: none;
+}
+
+.dyl-page .dyl-card:hover {
+	border-color: #e8e2dc;
+	box-shadow: none;
+	transform: none;
+}
+
+.dyl-page .dyl-card h4 {
+	margin-bottom: 0.2rem;
+	color: var(--site-ink);
+	font-size: 1.08rem;
+	font-weight: 700;
+}
+
+.dyl-page .dyl-card .button-container {
+	padding-top: 0.65rem;
+}
+
+.dyl-page .dyl-description {
+	margin-top: 0.85rem;
+}
+
+.dyl-page .dyl-description p {
+	margin: 0;
 	color: #454c49;
+	font-size: 0.92rem;
+	line-height: 1.75;
+}
+
+.dyl-page .dyl-gallery {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr);
+	gap: 0.85rem;
+	margin-top: 1rem;
+}
+
+.dyl-page .dyl-gallery-two {
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.dyl-page .dyl-gallery img {
+	display: block;
+	width: 100%;
+	height: auto;
+	margin: 0;
+	border: 1px solid #e8e2dc;
+	border-radius: 8px;
+}
+
+@media screen and (max-width: 736px) {
+	.dyl-page .dyl-card {
+		padding: 1.15rem;
+	}
+
+	.dyl-page .dyl-gallery-two {
+		grid-template-columns: minmax(0, 1fr);
+	}
 }
 
 @media screen and (max-width: 980px) {
@@ -1110,7 +1181,7 @@ body::before {
 }
 
 .publications-page .publication-card.box {
-	border: 1px solid #cfd8d4;
+	border: 1px solid #e8e2dc;
 	box-shadow: none;
 }
 
@@ -1120,7 +1191,7 @@ body::before {
 }
 
 .publications-page .publication-card.box:hover {
-	border-color: #cfd8d4;
+	border-color: #e8e2dc;
 	box-shadow: none;
 	transform: none;
 }
@@ -1143,11 +1214,33 @@ body::before {
 	content: none;
 }
 
+.publications-page .custom-button i {
+	width: 1em;
+	margin-right: 0.42rem;
+	font-size: 1.05em;
+	text-align: center;
+}
+
+.publications-page .custom-button {
+	padding: 0.24rem 0.58rem;
+	border: 1px solid #e8e2dc;
+	border-radius: 10px;
+	background: #fff;
+	font-size: 0.8rem;
+}
+
 .custom-button:hover {
 	border-color: var(--tech-cyan);
 	background: var(--tech-panel);
 	color: #f4fffc;
 	box-shadow: 3px 3px 0 rgba(43, 78, 163, 0.35);
+}
+
+.publications-page .custom-button:hover {
+	border-color: #75bce5;
+	background: #fff;
+	color: #75bce5;
+	box-shadow: none;
 }
 
 #filter-container {
@@ -1367,6 +1460,22 @@ body::before {
 	line-height: inherit;
 }
 
+.publications-page .math-inline {
+	white-space: nowrap;
+}
+
+.publications-page .math-inline i {
+	font-family: Georgia, "Times New Roman", serif;
+	font-style: italic;
+}
+
+.publications-page .math-inline sub {
+	position: relative;
+	bottom: -0.18em;
+	font-size: 0.72em;
+	line-height: 0;
+}
+
 .honor-item {
 	position: relative;
 	padding: 10px 0.75rem 10px 1.25rem;
@@ -1380,9 +1489,9 @@ body::before {
 	left: 0;
 	width: 6px;
 	height: 6px;
-	border-radius: 0;
-	background: var(--tech-cyan);
-	transform: translateY(-50%) rotate(45deg);
+	border-radius: 50%;
+	background: #111;
+	transform: translateY(-50%);
 }
 
 .activity-title a:hover,
@@ -1527,14 +1636,7 @@ body::before {
 }
 
 .education-timeline .education-item:not(:last-child)::before {
-	content: "";
-	position: absolute;
-	top: calc(0.9rem + 53px);
-	bottom: calc(-0.9rem + 8px);
-	left: calc(0.75rem + 21.25px);
-	width: 2.5px;
-	background: #c8cdcb;
-	z-index: 0;
+	content: none;
 }
 
 .education-info .education-date {
@@ -1761,7 +1863,8 @@ body::before {
 .projects-page #main > header,
 .talks-page #main > header,
 .teaching-page #main > header,
-.activities-page #main > header {
+.activities-page #main > header,
+.dyl-page #main > header {
 	padding: 0;
 	border-left: 0;
 	text-align: center;
@@ -1772,11 +1875,13 @@ body::before {
 .talks-page #main > header::before,
 .teaching-page #main > header::before,
 .activities-page #main > header::before,
+.dyl-page #main > header::before,
 .publications-page-body #main > header::after,
 .projects-page #main > header::after,
 .talks-page #main > header::after,
 .teaching-page #main > header::after,
-.activities-page #main > header::after {
+.activities-page #main > header::after,
+.dyl-page #main > header::after {
 	content: none;
 }
 
@@ -1784,7 +1889,8 @@ body::before {
 .projects-page #main > header h2,
 .talks-page #main > header h2,
 .teaching-page #main > header h2,
-.activities-page #main > header h2 {
+.activities-page #main > header h2,
+.dyl-page #main > header h2 {
 	color: var(--site-ink);
 	font-size: 36px;
 	font-weight: 650;
@@ -1831,6 +1937,19 @@ body::before {
 	display: inline;
 	font-size: inherit;
 	line-height: inherit;
+}
+
+.home-page .research-section .about-list strong {
+	padding: 0 0.08em;
+	background: linear-gradient(
+		to top,
+		rgba(156, 199, 255, 0.62) 0,
+		rgba(156, 199, 255, 0.62) 42%,
+		transparent 42%,
+		transparent 100%
+	);
+	-webkit-box-decoration-break: clone;
+	box-decoration-break: clone;
 }
 
 /* Keep Course Materials cards stationary while interacting with videos. */
@@ -1966,6 +2085,14 @@ html[data-theme="dark"] .box:hover {
 	box-shadow: 0 10px 28px rgba(0, 0, 0, 0.4);
 }
 
+html[data-theme="dark"] .dyl-page .dyl-card,
+html[data-theme="dark"] .dyl-page .dyl-card:hover {
+	background: var(--site-surface);
+	border-color: var(--site-line);
+	box-shadow: none;
+	transform: none;
+}
+
 html[data-theme="dark"] .about-section p,
 html[data-theme="dark"] .about-list li,
 html[data-theme="dark"] .home-page .about-list li,
@@ -1991,6 +2118,13 @@ html[data-theme="dark"] .custom-button:hover {
 	border-color: var(--site-accent);
 	background: #222a36;
 	color: var(--site-accent);
+}
+
+html[data-theme="dark"] .publications-page .custom-button:hover {
+	border-color: #75bce5;
+	background: var(--site-surface);
+	color: #75bce5;
+	box-shadow: none;
 }
 
 html[data-theme="dark"] .filter-tags:hover {
@@ -2084,6 +2218,10 @@ html[data-theme="dark"] .education-department {
 	color: var(--site-muted);
 }
 
+html[data-theme="dark"] .honor-item::before {
+	background: var(--site-ink);
+}
+
 html[data-theme="dark"] .box,
 html[data-theme="dark"] .publication-card.box,
 html[data-theme="dark"] .teaching-course-card {
@@ -2162,4 +2300,13 @@ html[data-theme="dark"] #main.container.home h2 {
 		color: #ffffff;
 		box-shadow: 0 10px 24px rgba(0, 0, 0, 0.42), inset 0 1px 0 rgba(255, 255, 255, 0.08);
 	}
+}
+
+/* While the liquid indicator is active it is the only highlight: suppress the
+   hover pill on the current page's link and on the click target, so no white
+   border shows through during the indicator animation. */
+#header nav.has-liquid-indicator > ul > li > a[aria-current="page"]:hover,
+#header nav.has-liquid-indicator > ul > li > a.is-liquid-target:hover {
+	border-color: transparent;
+	background: transparent;
 }
