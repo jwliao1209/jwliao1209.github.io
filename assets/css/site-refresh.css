@@ -1446,6 +1446,14 @@ body::before {
 	--tag-dark-bg: rgba(221, 196, 122, 0.56);
 }
 
+.tag-robot-manipulation {
+	--tag-bg: #f3ece3;
+	--tag-border: #c7a582;
+	--tag-text: #8a5a30;
+	--tag-selected: #96663a;
+	--tag-dark-bg: rgba(199, 165, 130, 0.56);
+}
+
 .talks-page .publication-venue a {
 	color: inherit;
 	font-weight: inherit;
