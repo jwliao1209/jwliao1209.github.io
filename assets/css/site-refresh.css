@@ -1367,11 +1367,11 @@ body::before {
 }
 
 .tag-low-level-vision {
-	--tag-bg: #f9ebf1;
-	--tag-border: #dca9be;
-	--tag-text: #94506c;
-	--tag-selected: #a35d78;
-	--tag-dark-bg: rgba(220, 169, 190, 0.56);
+	--tag-bg: #eceefb;
+	--tag-border: #aab2e0;
+	--tag-text: #4a549c;
+	--tag-selected: #5862ad;
+	--tag-dark-bg: rgba(170, 178, 224, 0.56);
 }
 
 .tag-visual-perception {
@@ -1444,6 +1444,14 @@ body::before {
 	--tag-text: #876d20;
 	--tag-selected: #967b2c;
 	--tag-dark-bg: rgba(221, 196, 122, 0.56);
+}
+
+.tag-hai {
+	--tag-bg: #f9ebf1;
+	--tag-border: #dca9be;
+	--tag-text: #94506c;
+	--tag-selected: #a35d78;
+	--tag-dark-bg: rgba(220, 169, 190, 0.56);
 }
 
 .tag-robot-manipulation {

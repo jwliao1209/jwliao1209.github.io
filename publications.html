@@ -47,9 +47,9 @@
 							<section class="publication-card box" data-tags="#Generative Models, #Robot Manipulation">
 								<h4 class="publication-title">Learning Conditional Source Distribution via Flow Reversal for Temporal Flow Matching</h4>
 								<p class="publication-authors">
-									<a href="https://syun413.github.io/">Kuan-Hsun Tu</a>,
-									Hsuan-Chi Liu,
-									<b>Jia-Wei Liao</b>,
+									<a href="https://syun413.github.io/">Kuan-Hsun Tu</a>*,
+									Hsuan-Chi Liu*,
+									<b>Jia-Wei Liao</b>*,
 									Chien-Sheng Chiang,
 									<a href="https://www.csie.ntu.edu.tw/~ccf/">Cheng-Fu Chou</a>,
 									<a href="https://twke18.github.io/">Tsung-Wei Ke</a>
@@ -180,6 +180,26 @@
 								</ul>
 								<div class="publication-abstract">
 									<p class="publication-abs">MixTV is an image-denoising model that combines <span class="math-inline"><i>L</i><sub>1</sub></span> and <span class="math-inline"><i>L</i><sub>2</sub></span> data-fidelity terms to handle multiple and mixed noise types, while also establishing uniqueness of the solution and convergence of the algorithm.</p>
+								</div>
+							</section>
+
+							<section class="publication-card box" data-tags="#HAI">
+								<h4 class="publication-title">Exploring AI-Supported Disciplinary Mediation in Student Project Teams' Text-Based Communication: A Probe-Grounded Co-Design Study</h4>
+								<p class="publication-authors">
+									Ching-Jung Cheng*,
+									Yu-Chan Chung*,
+									Bing-Chen Chiu,
+									Yu-Hsuan Lin,
+									<b>Jia-Wei Liao</b><sup>†</sup>
+								</p>
+								<p class="publication-venue">OzCHI 2026 LBW</p>
+								<div class="tags-container"></div>
+								<ul class="button-container">
+									<li><a href="https://arxiv.org/abs/2608.07503" class="custom-button" target="_blank">Paper</a></li>
+									<li><a href="https://github.com/imbensonchiu/spritz" class="custom-button" target="_blank">Code</a></li>
+								</ul>
+								<div class="publication-abstract">
+									<p class="publication-abs">Spritz is a Discord-based LLM technology probe that flags tensions in interdisciplinary student teams' chat, privately asks members to explain their views, and posts anonymized summaries back to the group, informing a co-design study of AI-supported mediation.</p>
 								</div>
 							</section>
 
@@ -387,11 +407,12 @@
 					});
 				});
 
-				const uniqueTags = new Set();
+				const tagCounts = new Map();
 				document.querySelectorAll(".publication-card").forEach(box => {
 					const tags = box.getAttribute("data-tags").split(", ");
-					tags.forEach(tag => uniqueTags.add(tag));
+					tags.forEach(tag => tagCounts.set(tag, (tagCounts.get(tag) || 0) + 1));
 				});
+				const uniqueTags = [...tagCounts.keys()].sort((a, b) => tagCounts.get(b) - tagCounts.get(a));
 		
 				const filterTagsContainer = document.getElementById("filter-tags");
 				const allTagButton = document.createElement("span");
