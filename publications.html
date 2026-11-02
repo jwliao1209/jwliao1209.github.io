@@ -44,7 +44,7 @@
 						</div>
 
 						<div class="publications-container">
-							<section class="publication-card box" data-tags="#Generative Models, #Robot Manipulation">
+							<section class="publication-card box" data-tags="#Representative, #Generative Models, #Robot Manipulation">
 								<h4 class="publication-title">Learning Conditional Source Distribution via Flow Reversal for Temporal Flow Matching</h4>
 								<p class="publication-authors">
 									<a href="https://syun413.github.io/">Kuan-Hsun Tu</a>*,
@@ -65,7 +65,42 @@
 								</div>
 							</section>
 
-							<section class="publication-card box" data-tags="#Generative Models, #Inference-time Guidance, #Low-level Vision">
+							<section class="publication-card box" data-tags="#Representative, #Visual Reasoning, #VLM">
+								<h4 class="publication-title">QVR3D: Query-Guided Visual Reasoning for Training-Free 3D Grounding</h4>
+								<p class="publication-authors">
+									Jung-Hao Kao*,
+									<a href="https://jing-en-huang.github.io/">Jing-En Huang</a>*,
+									<b>Jia-Wei Liao</b>*,
+									Tzuhsuan Huang,
+									<a href="https://yulunalexliu.github.io/">Yu-Lun Liu</a>,
+									<a href="https://www.csie.ntu.edu.tw/~ccf/">Cheng-Fu Chou</a>,
+									<a href="https://homepage.citi.sinica.edu.tw/pages/pullpull/index_en.html">Jun-Cheng Chen</a>
+								</p>
+								<p class="publication-venue">WACV 2027</p>
+								<div class="tags-container"></div>
+								<div class="publication-abstract">
+									<p class="publication-abs">QVR3D is a training-free 3D visual grounding framework that combines query-guided frame selection and probabilistic visual reasoning to efficiently and accurately localize objects in 3D scenes using natural language descriptions.</p>
+								</div>
+							</section>
+
+							<section class="publication-card box" data-tags="#Representative, #Generative Models, #Inference-time Guidance, #VLM">
+								<h4 class="publication-title">VLM as an Editing Pilot: VLM-Steered Velocity Control for Flow-Based Image Editing</h4>
+								<p class="publication-authors">
+									Kuan-Shen Chiu*,
+									<b>Jia-Wei Liao</b>*,
+									Yu-Chieh Chao,
+									<a href="https://alexpeng517.github.io/">Li-Xuan Peng</a>,
+									<a href="https://homepage.iis.sinica.edu.tw/pages/ma/index_en.html">Wei-Yun Ma</a>,
+									<a href="https://www.csie.ntu.edu.tw/~ccf/">Cheng-Fu Chou</a>
+								</p>
+								<p class="publication-venue">WACV 2027</p>
+								<div class="tags-container"></div>
+								<div class="publication-abstract">
+									<p class="publication-abs">V2C-Edit is a training-free, VLM-guided image editing framework that dynamically controls flow-based editing velocities using instruction-level semantic feedback and adaptive spatial masking to improve editing accuracy while preserving source image content.</p>
+								</div>
+							</section>
+
+							<section class="publication-card box" data-tags="#Representative, #Generative Models, #Inference-time Guidance, #Low-level Vision">
 								<div class="publication-split">
 									<div class="publication-main">
 										<h4 class="publication-title">DiffRGD: An Inference-time Diffusion Guidance Through Riemannian Gradient Descent</h4>
@@ -100,7 +135,7 @@
 								</div>
 							</section>
 
-							<section class="publication-card box" data-tags="#Generative Models, #Robot Manipulation">
+							<section class="publication-card box" data-tags="#Representative, #Generative Models, #Robot Manipulation">
 								<div class="publication-split">
 									<div class="publication-main">
 										<h4 class="publication-title">COT-FM: Cluster-wise Optimal Transport Flow Matching</h4>
@@ -132,7 +167,7 @@
 								</div>
 							</section>
 
-							<section class="publication-card box" data-tags="#Generative Models, #AI Safety">
+							<section class="publication-card box" data-tags="#Representative, #Generative Models, #Trustworthy AI">
 								<div class="publication-split">
 									<div class="publication-main">
 										<h4 class="publication-title">M-ErasureBench: A Comprehensive Multimodal Evaluation Benchmark for Concept Erasure in Diffusion Models</h4>
@@ -203,7 +238,7 @@
 								</div>
 							</section>
 
-							<section class="publication-card box" data-tags="#Generative Models, #Inference-time Guidance">
+							<section class="publication-card box" data-tags="#Representative, #Generative Models, #Inference-time Guidance">
 								<h4 class="publication-title">Zero-shot Geometry-Aware Diffusion Guidance for Music Restoration</h4>
 								<p class="publication-authors">
 									<b>Jia-Wei Liao</b>,
@@ -245,7 +280,7 @@
 								</div>
 							</section>
 
-						<section class="publication-card box" data-tags="#Generative Models, #Inference-time Guidance">
+						<section class="publication-card box" data-tags="#Representative, #Generative Models, #Inference-time Guidance">
 							<div class="publication-split">
 								<div class="publication-main">
 									<h4 class="publication-title">DiffQRCoder: Diffusion-based Aesthetic QR Code Generation with Scanning Robustness Guided Iterative Refinement</h4>
@@ -281,7 +316,7 @@
 							</div>
 						</section>
 
-						<section class="publication-card box" data-tags="#Generative Models, #AI Safety">
+						<section class="publication-card box" data-tags="#Representative, #Generative Models, #Trustworthy AI">
 							<div class="publication-split">
 								<div class="publication-main">
 									<h4 class="publication-title">Pixel Is Not A Barrier: An Effective Evasion Attack for Pixel-Domain Diffusion Models</h4>
@@ -399,7 +434,7 @@
 				document.querySelectorAll(".publication-card").forEach(box => {
 					const tagsContainer = box.querySelector(".tags-container");
 					const tags = box.getAttribute("data-tags").split(", ");
-					tags.forEach(tag => {
+					tags.filter(tag => tag !== "#Representative").forEach(tag => {
 						const span = document.createElement("span");
 						span.className = `tags ${getTagClass(tag)}`;
 						span.textContent = tag.replace(/^#/, "");
@@ -412,19 +447,23 @@
 					const tags = box.getAttribute("data-tags").split(", ");
 					tags.forEach(tag => tagCounts.set(tag, (tagCounts.get(tag) || 0) + 1));
 				});
-				const uniqueTags = [...tagCounts.keys()].sort((a, b) => tagCounts.get(b) - tagCounts.get(a));
+				const uniqueTags = [...tagCounts.keys()].sort((a, b) => {
+					if (a === "#Representative") return -1;
+					if (b === "#Representative") return 1;
+					return tagCounts.get(b) - tagCounts.get(a);
+				});
 		
 				const filterTagsContainer = document.getElementById("filter-tags");
 				const allTagButton = document.createElement("span");
 				allTagButton.className = "filter-tags tag-all selected";
-				allTagButton.textContent = "All Papers";
+				allTagButton.textContent = `All Papers (${document.querySelectorAll(".publication-card").length})`;
 				allTagButton.setAttribute("data-tag", "__all__");
 				filterTagsContainer.appendChild(allTagButton);
 
 				uniqueTags.forEach(tag => {
 					const tagButton = document.createElement("span");
 					tagButton.className = `filter-tags ${getTagClass(tag)}`;
-					tagButton.textContent = tag.replace(/^#/, "");
+					tagButton.textContent = tag.replace(/^#/, "") + (tag === "#Representative" ? ` (${tagCounts.get(tag)})` : "");
 					tagButton.setAttribute("data-tag", tag);
 					filterTagsContainer.appendChild(tagButton);
 				});

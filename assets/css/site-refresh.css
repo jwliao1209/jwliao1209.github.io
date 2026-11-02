@@ -850,7 +850,7 @@ body::before {
 	border: 1px solid rgba(255, 255, 255, 0.72);
 	border-radius: 18px;
 	background: rgba(246, 250, 251, 0.2);
-	box-shadow: 0 12px 34px rgba(31, 47, 53, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.88), inset 0 -1px 0 rgba(98, 105, 112, 0.1);
+	box-shadow: 0 12px 34px rgba(31, 47, 53, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.88);
 	-webkit-backdrop-filter: blur(6px) saturate(120%);
 	backdrop-filter: blur(6px) saturate(120%);
 }
@@ -1358,7 +1358,7 @@ body::before {
 	--tag-dark-bg: rgba(221, 196, 122, 0.56);
 }
 
-.tag-ai-safety {
+.tag-trustworthy-ai {
 	--tag-bg: #fbecec;
 	--tag-border: #e5aaaa;
 	--tag-text: #a34646;
@@ -1367,11 +1367,11 @@ body::before {
 }
 
 .tag-low-level-vision {
-	--tag-bg: #eceefb;
-	--tag-border: #aab2e0;
-	--tag-text: #4a549c;
-	--tag-selected: #5862ad;
-	--tag-dark-bg: rgba(170, 178, 224, 0.56);
+	--tag-bg: #f3ece3;
+	--tag-border: #c7a582;
+	--tag-text: #8a5a30;
+	--tag-selected: #96663a;
+	--tag-dark-bg: rgba(199, 165, 130, 0.56);
 }
 
 .tag-visual-perception {
@@ -1455,11 +1455,35 @@ body::before {
 }
 
 .tag-robot-manipulation {
-	--tag-bg: #f3ece3;
-	--tag-border: #c7a582;
-	--tag-text: #8a5a30;
-	--tag-selected: #96663a;
-	--tag-dark-bg: rgba(199, 165, 130, 0.56);
+	--tag-bg: #eceefb;
+	--tag-border: #aab2e0;
+	--tag-text: #4a549c;
+	--tag-selected: #5862ad;
+	--tag-dark-bg: rgba(170, 178, 224, 0.56);
+}
+
+.tag-representative {
+	--tag-bg: #eef0ef;
+	--tag-border: #b9bfbc;
+	--tag-text: #4a514e;
+	--tag-selected: #252b29;
+	--tag-dark-bg: rgba(185, 191, 188, 0.56);
+}
+
+.tag-visual-reasoning {
+	--tag-bg: #e4f3f9;
+	--tag-border: #9acbe0;
+	--tag-text: #2a6f8f;
+	--tag-selected: #3a7f9f;
+	--tag-dark-bg: rgba(154, 203, 224, 0.56);
+}
+
+.tag-vlm {
+	--tag-bg: #edf5e9;
+	--tag-border: #afcca2;
+	--tag-text: #577c49;
+	--tag-selected: #668b57;
+	--tag-dark-bg: rgba(175, 204, 162, 0.56);
 }
 
 .talks-page .publication-venue a {
@@ -1778,7 +1802,7 @@ body::before {
 #header {
 	border-color: rgba(255, 255, 255, 0.72);
 	background: rgba(246, 250, 251, 0.2);
-	box-shadow: 0 12px 34px rgba(31, 47, 53, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.88), inset 0 -1px 0 rgba(98, 105, 112, 0.1);
+	box-shadow: 0 12px 34px rgba(31, 47, 53, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.88);
 }
 
 #header h1 a {
